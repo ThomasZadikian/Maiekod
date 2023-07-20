@@ -8,6 +8,17 @@
   }
 }
 
+@keyframes shine {
+  0% {
+    color: #c1c1c1;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: #c1c1c1;
+  }
+}
 @keyframes floatAndPulse {
   0% {
     transform: scale(1);
@@ -23,11 +34,29 @@
   }
 }
 
+@keyframes floatAndPulseButton {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
+  margin-right: 5%;
+  margin-top: 2%;
   .navbar-left {
     display: flex;
+    margin-left: 2%;
   }
   .navbar-right {
     display: flex;
@@ -45,7 +74,9 @@
       no-repeat;
     background-size: 0 100%;
     transition: background-size 0.3s;
+    animation: shine 2s linear infinite reverse;
     &:hover {
+      animation: none;
       color: white;
       background-size: 100% 100%;
       transition: 0.3s;
@@ -53,16 +84,28 @@
   }
 }
 
-.mainContent {
+.centerTitle {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-direction: column;
-  margin-top: 10%;
+  margin-top: 8%;
   svg {
     stroke: #595959;
     stroke-width: 0;
-    animation: floatAndPulse 3s ease-in-out infinite;
+    animation: floatAndPulse 4s ease-in-out infinite;
+  }
+  button {
+    padding-left: 5%;
+    padding-right: 5%;
+    background: rgba(89, 89, 89, 0.05);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+    color: white;
+    font-size: 35px;
+    animation: floatAndPulseButton 4s ease-in-out infinite;
   }
 }
