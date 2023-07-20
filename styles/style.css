@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+* {
+  font-family: "Jost", sans-serif;
+}
+* html,
+* body {
+  background-color: #1f2022;
+}
+
+@keyframes floatAndPulse {
+  0% {
+    transform: scale(1);
+    stroke-width: 0;
+  }
+  50% {
+    transform: scale(1.02);
+    stroke-width: 1;
+  }
+  100% {
+    transform: scale(1);
+    stroke-width: 0;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .navbar-left {
+  display: flex;
+}
+.navbar .navbar-right {
+  display: flex;
+  gap: 35px;
+}
+.navbar .icon {
+  height: 50px;
+  width: 50px;
+}
+.navbar a {
+  color: #c1c1c1;
+  font-size: 30px;
+  text-decoration: none;
+  background: linear-gradient(to top, #c1c1c1 0%, white 4px, transparent 5px) no-repeat;
+  background-size: 0 100%;
+  transition: background-size 0.3s;
+}
+.navbar a:hover {
+  color: white;
+  background-size: 100% 100%;
+  transition: 0.3s;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 10%;
+}
+.mainContent svg {
+  stroke: #595959;
+  stroke-width: 0;
+  animation: floatAndPulse 3s ease-in-out infinite;
+}/*# sourceMappingURL=style.css.map */
