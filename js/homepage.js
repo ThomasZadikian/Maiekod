@@ -20,13 +20,26 @@ starsCanvas.height = window.innerHeight;
 
 const stars = [];
 
+function randomOpacity() {
+  return Math.random() * 1 + 0.2;
+}
+
+function updateStarOpacity() {
+  for (const star of stars) {
+    star.opacity = randomOpacity();
+  }
+  const randomDelay = Math.random() * 200 + 100;
+  setTimeout(updateStarOpacity, randomDelay);
+}
+
 function createStar() {
   const star = {
     x: Math.random() * starsCanvas.width,
     y: Math.random() * starsCanvas.height,
     size: Math.random() * 2,
     opacity: Math.random(),
-    speed: 0.1 + Math.random() * 0.5,
+    speed: 0.3 + Math.random() * 0.5,
+    opacity: randomOpacity(),
   };
   stars.push(star);
 }
@@ -37,7 +50,7 @@ function drawStars() {
   for (const star of stars) {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
-    ctx.fillStyle = `rgba(255,255,255,${star.opacity})`;
+    ctx.fillStyle = `rgba(232,232,232,${star.opacity})`;
     ctx.fill();
 
     star.x += star.speed;
@@ -51,19 +64,4 @@ for (let i = 0; i < 100; i++) {
   createStar();
 }
 drawStars();
-
-// function createStars() {
-//   const numStars = Math.floor(Math.random() * 21) + 30;
-//   const container = document.body;
-
-//   for (let i = 0; i < numStars; i++) {
-//     const stars = document.createElement("div");
-//     stars.classList.add("stars");
-//     stars.style.left = `${Math.random() * 100}%`;
-//     stars.style.top = `${Math.random() * 100}%`;
-//     stars.style.animationDuration = `${Math.random() * 1 + 0.5}s`;
-//     container.appendChild(stars);
-//   }
-// }
-
-// createStars();
+updateStarOpacity();
