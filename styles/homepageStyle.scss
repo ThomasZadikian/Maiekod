@@ -54,6 +54,18 @@
   }
 }
 
+@keyframes floatAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
 #starsCanvas {
   position: absolute;
   top: 0;
@@ -125,7 +137,7 @@
   align-items: center;
   align-content: center;
   flex-direction: column;
-  margin-top: 8%;
+  margin-top: 7%;
   svg {
     stroke: #595959;
     stroke-width: 0;
@@ -160,12 +172,22 @@ button {
   cursor: pointer;
 }
 
-.socialMedia {
+.social {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  height: 50px;
-  width: 50px;
+  gap: 10px;
+  margin-left: 10px;
+  svg {
+    height: 50px;
+    width: 50px;
+    transition: 0.3s ease-in-out;
+  }
+  .moveIcon {
+    height: 60px;
+    width: 60px;
+    transition: 0.3s ease-in-out;
+    margin-left: 25px;
+  }
 }
 
 .presentation {

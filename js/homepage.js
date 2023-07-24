@@ -1,5 +1,4 @@
 // Function for stars in background
-
 function parallaxEffect(layer, scrollSpeed) {
   const element = document.querySelector(layer);
   let scrollPosition = 0;
@@ -21,14 +20,14 @@ starsCanvas.height = window.innerHeight;
 const stars = [];
 
 function randomOpacity() {
-  return Math.random() * 1 + 0.2;
+  return Math.random() * 0.8 + 0.2;
 }
 
 function updateStarOpacity() {
   for (const star of stars) {
     star.opacity = randomOpacity();
   }
-  const randomDelay = Math.random() * 200 + 100;
+  const randomDelay = Math.random() * 150 + 100;
   setTimeout(updateStarOpacity, randomDelay);
 }
 
@@ -37,7 +36,7 @@ function createStar() {
     x: Math.random() * starsCanvas.width,
     y: Math.random() * starsCanvas.height,
     size: Math.random() * 2,
-    speed: 0.3 + Math.random() * 0.5,
+    speed: 0.3 + Math.random() * 0.2,
     opacity: randomOpacity(),
   };
   stars.push(star);
@@ -59,11 +58,12 @@ function drawStars() {
   }
   requestAnimationFrame(drawStars);
 }
+
 for (let i = 0; i < 100; i++) {
   createStar();
 }
 
-// Logic for scroll button
+// function for scroll button
 const presentationContainer = document.querySelector("#hiddenContainer");
 const showContentButton = document.querySelector("#showContentButton");
 
@@ -71,6 +71,47 @@ showContentButton.addEventListener("click", () => {
   presentationContainer.removeAttribute("hidden");
   presentationContainer.scrollIntoView({ behavior: "smooth" });
 });
+
+// function for socialButton
+const socialButton = {
+  facebook: document.querySelector("#facebook"),
+  github: document.querySelector("#github"),
+  instagram: document.querySelector("#instagram"),
+  linkedin: document.querySelector("#linkedin"),
+};
+
+function moveSocialMedia(event, social, color) {
+  if (event.type === "mouseover") {
+    console.log(social + "Test hover");
+    socialButton[social].style.fill = color;
+    socialButton[social].classList.add("moveIcon");
+  } else if (event.type === "mouseout") {
+    socialButton[social].style.fill = "black";
+    socialButton[social].classList.remove("moveIcon");
+  }
+}
+
+function addEventListenersToSocialButton(social, color) {
+  const button = socialButton[social];
+  button.addEventListener("mouseover", (event) =>
+    moveSocialMedia(event, social, color)
+  );
+  button.addEventListener("mouseout", (event) =>
+    moveSocialMedia(event, social, "black")
+  );
+}
+
+for (const social in socialButton) {
+  if (social === "facebook") {
+    addEventListenersToSocialButton(social, "rgba(59, 89, 152, 100%)");
+  } else if (social === "github") {
+    addEventListenersToSocialButton(social, "rgba(150, 3, 0, 100%)");
+  } else if (social === "instagram") {
+    addEventListenersToSocialButton(social, "rgba(195, 42, 163, 100%)");
+  } else if (social === "linkedin") {
+    addEventListenersToSocialButton(social, "rgba(10, 102, 194, 100%)");
+  }
+}
 
 drawStars();
 updateStarOpacity();
