@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+* {
+  font-family: "Jost", sans-serif;
+  color: white;
+}
+* html,
+* body {
+  background-color: #1f2022;
+  margin: 0;
+}
+
+@keyframes shine {
+  0% {
+    color: #c1c1c1;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: #c1c1c1;
+  }
+}
+@keyframes floatAndPulse {
+  0% {
+    transform: scale(1);
+    stroke-width: 0;
+  }
+  50% {
+    transform: scale(1.02);
+    stroke-width: 1;
+  }
+  100% {
+    transform: scale(1);
+    stroke-width: 0;
+  }
+}
+@keyframes floatAndPulseButton {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+@keyframes floatAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(7px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+#starsCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+.twinkling::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  box-shadow: 0 0 3px white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5%;
+  margin-top: 15px;
+}
+.navbar p {
+  margin-left: 10px;
+  padding: 5px;
+  background-color: red;
+  border-radius: 5px;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+}
+.navbar .navbar-left {
+  display: flex;
+  margin-left: 2%;
+}
+.navbar .navbar-right {
+  display: flex;
+  gap: 35px;
+}
+.navbar .icon {
+  height: 50px;
+  width: 50px;
+}
+.navbar a {
+  color: #c1c1c1;
+  font-size: 30px;
+  text-decoration: none;
+  background: linear-gradient(to top, #c1c1c1 0%, white 4px, transparent 5px) no-repeat;
+  background-size: 0 100%;
+  transition: background-size 0.3s;
+  animation: shine 2s linear infinite reverse;
+}
+.navbar a:hover {
+  animation: none;
+  color: white;
+  background-size: 100% 100%;
+  transition: 0.3s;
+}
+
+.centerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 7%;
+}
+.centerTitle svg {
+  stroke: #595959;
+  stroke-width: 0;
+  animation: floatAndPulse 4s ease-in-out infinite;
+}
+.centerTitle button {
+  padding-left: 5%;
+  padding-right: 5%;
+  background: #1f2022;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  color: white;
+  font-size: 35px;
+  animation: floatAndPulseButton 4s ease-in-out infinite;
+}
+
+button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background: rgba(89, 89, 89, 0.05);
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.social svg {
+  height: 50px;
+  width: 50px;
+  transition: 0.3s ease-in-out;
+}
+.social .moveIcon {
+  height: 60px;
+  width: 60px;
+  transition: 0.3s ease-in-out;
+  margin-left: 15px;
+}
+
+.presentation {
+  display: none;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 1150px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.presentation .presentationText {
+  position: relative;
+  height: 550px;
+  width: 750px;
+  margin-bottom: 10vh;
+  text-align: justify;
+  padding: 20px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(73, 73, 73, 0.05) 0%, rgba(89, 89, 89, 0) 100%);
+  box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0.5);
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+}
+.presentation .presentationText .buttonContainer {
+  position: absolute;
+  justify-content: center;
+  bottom: 10px;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 35px;
+}
+.presentation .presentationText .buttonContainer button {
+  height: 60px;
+  width: 350px;
+}/*# sourceMappingURL=homepageStyle.css.map */
