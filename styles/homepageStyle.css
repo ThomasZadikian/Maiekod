@@ -142,8 +142,8 @@
   stroke: #595959;
   stroke-width: 0;
   animation: floatAndPulse 4s ease-in-out infinite;
-  height: 440px;
-  width: 4400px;
+  height: 430px;
+  width: 440px;
 }
 .centerTitle button {
   padding-left: 5%;
