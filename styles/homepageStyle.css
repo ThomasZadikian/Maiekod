@@ -89,6 +89,21 @@
   box-shadow: 0 0 3px white;
 }
 
+button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background: rgba(89, 89, 89, 0.05);
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -130,22 +145,54 @@
   transition: 0.3s;
 }
 
-.centerTitle {
-  display: flex;
+.mainContent {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  flex-direction: column;
-  margin-top: 5%;
 }
-.centerTitle svg {
+.mainContent .social {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  gap: 15px;
+  margin-left: 10px;
+}
+.mainContent .social a {
+  height: 50px;
+  width: 50px;
+}
+.mainContent .social svg {
+  height: 50px;
+  width: 50px;
+  transition: 0.3s ease-in-out;
+}
+.mainContent .social .moveIcon {
+  height: 60px;
+  width: 60px;
+  transition: 0.3s ease-in-out;
+  margin-left: 15px;
+}
+.mainContent .centerTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainContent svg {
   stroke: #595959;
   stroke-width: 0;
   animation: floatAndPulse 4s ease-in-out infinite;
   height: 430px;
   width: 440px;
 }
-.centerTitle button {
+.mainContent button {
   padding-left: 5%;
   padding-right: 5%;
   background: #1f2022;
@@ -156,43 +203,6 @@
   color: white;
   font-size: 35px;
   animation: floatAndPulseButton 4s ease-in-out infinite;
-}
-
-button {
-  padding-top: 4px;
-  padding-bottom: 4px;
-  background: rgba(89, 89, 89, 0.05);
-  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  overflow: hidden;
-  border: 0.5px rgba(0, 0, 0, 0.2) solid;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  display: inline-flex;
-  cursor: pointer;
-}
-
-.social {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-left: 10px;
-}
-.social a {
-  height: 50px;
-  width: 50px;
-}
-.social svg {
-  height: 50px;
-  width: 50px;
-  transition: 0.3s ease-in-out;
-}
-.social .moveIcon {
-  height: 60px;
-  width: 60px;
-  transition: 0.3s ease-in-out;
-  margin-left: 15px;
 }
 
 .presentation {
