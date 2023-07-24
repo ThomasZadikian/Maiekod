@@ -93,7 +93,7 @@
   display: flex;
   justify-content: space-between;
   margin-right: 5%;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 .navbar p {
   margin-left: 10px;
@@ -116,7 +116,7 @@
 }
 .navbar a {
   color: #c1c1c1;
-  font-size: 30px;
+  font-size: 25px;
   text-decoration: none;
   background: linear-gradient(to top, #c1c1c1 0%, white 4px, transparent 5px) no-repeat;
   background-size: 0 100%;
@@ -136,12 +136,14 @@
   align-items: center;
   align-content: center;
   flex-direction: column;
-  margin-top: 7%;
+  margin-top: 5%;
 }
 .centerTitle svg {
   stroke: #595959;
   stroke-width: 0;
   animation: floatAndPulse 4s ease-in-out infinite;
+  height: 350px;
+  width: 350px;
 }
 .centerTitle button {
   padding-left: 5%;
@@ -174,9 +176,12 @@ button {
 .social {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   margin-left: 10px;
-  margin-bottom: 10px;
+}
+.social a {
+  height: 50px;
+  width: 50px;
 }
 .social svg {
   height: 50px;
@@ -196,7 +201,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 1150px;
+  top: 940px;
   left: 50%;
   transform: translate(-50%, 0);
 }

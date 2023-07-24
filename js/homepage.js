@@ -66,10 +66,11 @@ for (let i = 0; i < 100; i++) {
 // function for scroll button
 const presentationContainer = document.querySelector("#hiddenContainer");
 const showContentButton = document.querySelector("#showContentButton");
+const presentationText = document.querySelector("#presentationText");
 
 showContentButton.addEventListener("click", () => {
   presentationContainer.removeAttribute("hidden");
-  presentationContainer.scrollIntoView({ behavior: "smooth" });
+  presentationText.scrollIntoView({ behavior: "smooth" });
 });
 
 // function for socialButton
