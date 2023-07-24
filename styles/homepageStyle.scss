@@ -100,7 +100,14 @@
   display: flex;
   justify-content: space-between;
   margin-right: 5%;
-  margin-top: 2%;
+  margin-top: 15px;
+  p {
+    margin-left: 10px;
+    padding: 5px;
+    background-color: red;
+    border-radius: 5px;
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
   .navbar-left {
     display: flex;
     margin-left: 2%;
@@ -177,6 +184,7 @@ button {
   flex-direction: column;
   gap: 10px;
   margin-left: 10px;
+  margin-bottom: 10px;
   svg {
     height: 50px;
     width: 50px;
