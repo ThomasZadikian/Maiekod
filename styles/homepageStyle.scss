@@ -2,10 +2,10 @@
 
 * {
   font-family: "Jost", sans-serif;
+  color: white;
   html,
   body {
     background-color: #1f2022;
-    overflow: hidden;
     margin: 0;
   }
 }
@@ -142,5 +142,68 @@
     color: white;
     font-size: 35px;
     animation: floatAndPulseButton 4s ease-in-out infinite;
+  }
+}
+
+button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background: rgba(89, 89, 89, 0.05);
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 50px;
+  width: 50px;
+}
+
+.presentation {
+  display: none;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 1150px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  .presentationText {
+    position: relative;
+    height: 550px;
+    width: 750px;
+    margin-bottom: 10vh;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 5px;
+    background: linear-gradient(
+      180deg,
+      rgba(73, 73, 73, 0.05) 0%,
+      rgba(89, 89, 89, 0) 100%
+    );
+    box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0.5);
+    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+    .buttonContainer {
+      position: absolute;
+      justify-content: center;
+      bottom: 10px;
+      display: flex;
+      left: 50%;
+      transform: translateX(-50%);
+      gap: 35px;
+      button {
+        height: 60px;
+        width: 350px;
+      }
+    }
   }
 }

@@ -6,7 +6,7 @@ function parallaxEffect(layer, scrollSpeed) {
 
   function scrollAnimation() {
     scrollPosition += scrollSpeed;
-    element.style.transform = "translateY(-${scrollPosition}px)";
+    element.style.transform = `translateY(-${scrollPosition}px)`;
     requestAnimationFrame(scrollAnimation);
   }
   scrollAnimation();
@@ -37,7 +37,6 @@ function createStar() {
     x: Math.random() * starsCanvas.width,
     y: Math.random() * starsCanvas.height,
     size: Math.random() * 2,
-    opacity: Math.random(),
     speed: 0.3 + Math.random() * 0.5,
     opacity: randomOpacity(),
   };
@@ -63,5 +62,15 @@ function drawStars() {
 for (let i = 0; i < 100; i++) {
   createStar();
 }
+
+// Logic for scroll button
+const presentationContainer = document.querySelector("#hiddenContainer");
+const showContentButton = document.querySelector("#showContentButton");
+
+showContentButton.addEventListener("click", () => {
+  presentationContainer.removeAttribute("hidden");
+  presentationContainer.scrollIntoView({ behavior: "smooth" });
+});
+
 drawStars();
 updateStarOpacity();
