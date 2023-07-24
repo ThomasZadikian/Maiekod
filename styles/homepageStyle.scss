@@ -161,7 +161,6 @@ button {
   .social {
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
     position: absolute;
     bottom: 25px;
     left: 0;
@@ -196,27 +195,26 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+    svg {
+      stroke: #595959;
+      stroke-width: 0;
+      animation: floatAndPulse 4s ease-in-out infinite;
+      height: 430px;
+      width: 440px;
+    }
 
-  svg {
-    stroke: #595959;
-    stroke-width: 0;
-    animation: floatAndPulse 4s ease-in-out infinite;
-    height: 430px;
-    width: 440px;
-  }
-
-  button {
-    padding-left: 5%;
-    padding-right: 5%;
-    background: #1f2022;
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    overflow: hidden;
-    border: 0.5px rgba(0, 0, 0, 0.2) solid;
-    color: white;
-    font-size: 35px;
-    animation: floatAndPulseButton 4s ease-in-out infinite;
+    button {
+      padding-left: 5%;
+      padding-right: 5%;
+      background: #1f2022;
+      box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 0.5px rgba(0, 0, 0, 0.2) solid;
+      color: white;
+      font-size: 35px;
+      animation: floatAndPulseButton 4s ease-in-out infinite;
+    }
   }
 }
 
@@ -263,5 +261,36 @@ button {
 // Reponsive design start here
 
 //Responsive for large screen
-@media screen and (max-width: 1280px) and (min-width: 992px) {
+@media screen and (max-width: 1320px) and (min-width: 992px) {
+  .navbar {
+    p {
+      font-size: medium;
+      max-width: 70vh;
+    }
+  }
+}
+
+// Responsive for medium screen
+@media screen and (max-width: 992px) and (min-width: 600px) {
+  .navbar {
+    p {
+      position: absolute;
+      font-size: medium;
+      max-width: 85vh;
+      top: 6vh;
+    }
+  }
+  .presentation {
+    .presentationText {
+      max-width: 500px;
+    }
+    button {
+      max-width: 200px;
+    }
+  }
+  .mainContent {
+    .social {
+      flex-direction: row;
+    }
+  }
 }

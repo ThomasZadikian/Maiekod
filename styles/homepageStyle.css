@@ -153,7 +153,6 @@ button {
 .mainContent .social {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
   position: absolute;
   bottom: 25px;
   left: 0;
@@ -185,14 +184,14 @@ button {
   justify-content: center;
   align-items: center;
 }
-.mainContent svg {
+.mainContent .centerTitle svg {
   stroke: #595959;
   stroke-width: 0;
   animation: floatAndPulse 4s ease-in-out infinite;
   height: 430px;
   width: 440px;
 }
-.mainContent button {
+.mainContent .centerTitle button {
   padding-left: 5%;
   padding-right: 5%;
   background: #1f2022;
@@ -239,4 +238,28 @@ button {
 .presentation .presentationText .buttonContainer button {
   height: 60px;
   width: 350px;
+}
+
+@media screen and (max-width: 1320px) and (min-width: 992px) {
+  .navbar p {
+    font-size: medium;
+    max-width: 70vh;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 600px) {
+  .navbar p {
+    position: absolute;
+    font-size: medium;
+    max-width: 85vh;
+    top: 6vh;
+  }
+  .presentation .presentationText {
+    max-width: 500px;
+  }
+  .presentation button {
+    max-width: 200px;
+  }
+  .mainContent .social {
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=homepageStyle.css.map */
