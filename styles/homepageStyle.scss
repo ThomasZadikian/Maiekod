@@ -295,6 +295,8 @@ button {
   }
 }
 
+// Responsive for small screen
+
 @media screen and (max-width: 679px) {
   .navbar {
     justify-content: center;
@@ -330,24 +332,24 @@ button {
     }
   }
 
-  .presentation {
-    .presentationText {
-      max-width: 300px;
-    }
-    .buttonContainer {
-      flex-direction: column;
-      button {
-      }
-    }
-  }
-
   .mainContent {
     .social {
       flex-direction: row;
     }
     .centerTitle {
-      max-height: 340px;
-      max-width: 340px;
+      max-height: 330px;
+    }
+  }
+}
+
+.presentation {
+  .presentationText {
+    max-width: 300px;
+    height: 915px;
+  }
+  .buttonContainer {
+    flex-direction: column;
+    button {
     }
   }
 }

@@ -297,17 +297,17 @@ button {
     font-size: 25px;
     border-radius: 10px;
   }
-  .presentation .presentationText {
-    max-width: 300px;
-  }
-  .presentation .buttonContainer {
-    flex-direction: column;
-  }
   .mainContent .social {
     flex-direction: row;
   }
   .mainContent .centerTitle {
-    max-height: 340px;
-    max-width: 340px;
+    max-height: 330px;
   }
+}
+.presentation .presentationText {
+  max-width: 300px;
+  height: 915px;
+}
+.presentation .buttonContainer {
+  flex-direction: column;
 }/*# sourceMappingURL=homepageStyle.css.map */
