@@ -142,8 +142,8 @@
   stroke: #595959;
   stroke-width: 0;
   animation: floatAndPulse 4s ease-in-out infinite;
-  height: 350px;
-  width: 350px;
+  height: 440px;
+  width: 4400px;
 }
 .centerTitle button {
   padding-left: 5%;
@@ -201,7 +201,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 940px;
+  top: 1100px;
   left: 50%;
   transform: translate(-50%, 0);
 }
