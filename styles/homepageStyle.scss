@@ -340,16 +340,16 @@ button {
       max-height: 330px;
     }
   }
-}
 
-.presentation {
-  .presentationText {
-    max-width: 300px;
-    height: 915px;
-  }
-  .buttonContainer {
-    flex-direction: column;
-    button {
+  .presentation {
+    .presentationText {
+      max-width: 300px;
+      height: 915px;
+    }
+    .buttonContainer {
+      flex-direction: column;
+      button {
+      }
     }
   }
 }

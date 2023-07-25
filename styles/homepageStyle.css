@@ -303,11 +303,11 @@ button {
   .mainContent .centerTitle {
     max-height: 330px;
   }
-}
-.presentation .presentationText {
-  max-width: 300px;
-  height: 915px;
-}
-.presentation .buttonContainer {
-  flex-direction: column;
+  .presentation .presentationText {
+    max-width: 300px;
+    height: 915px;
+  }
+  .presentation .buttonContainer {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=homepageStyle.css.map */
