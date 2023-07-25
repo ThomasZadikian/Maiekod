@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/homepageStyle.css" />
+    <link rel="stylesheet" href="styles/generalStyle.css" />
     <title>T.Dev</title>
   </head>
   <body>
@@ -21,12 +22,12 @@
           </p>
         </div>
         <div class="navbar-right">
-          <a href="" class="navLink">Créations</a>
-          <a href="">Tarifs et contact</a>
+          <a href="/pages/inProgress.html" class="navLink">Créations</a>
+          <a href="/pages/inProgress.html">Tarifs et contact</a>
         </div>
       </nav>
     </header>
-    <section class="mainContent">
+    <main class="mainContent">
       <section class="social">
         <a href="#" class="iconContainer">
           <svg
@@ -106,7 +107,7 @@
         </svg>
         <button type="button" id="showContentButton">Qui suis-je ?</button>
       </div>
-    </section>
+    </main>
     <div id="hiddenContainer" hidden>
       <article class="presentation">
         <h1>Qui suis-je ?</h1>
@@ -138,13 +139,18 @@
             dans votre projet, ou à vous renseigner sur mes services
           </p>
           <div class="buttonContainer">
-            <button>Je suis un bouton</button>
-            <button>Je suis un bouton</button>
+            <button>
+              <a href="/pages/inProgress.html">REDIRECT_TO_**</a>
+            </button>
+            <button>
+              <a href="/pages/inProgress.html">REDIRECT_TO_**</a>
+            </button>
           </div>
         </section>
       </article>
     </div>
     <!-- Source javascript file -->
     <script src="js/homepage.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
