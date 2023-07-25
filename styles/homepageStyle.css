@@ -240,13 +240,22 @@ button {
   width: 350px;
 }
 
+/* Animation de l'effet de reflet */
 @media screen and (max-width: 1320px) and (min-width: 992px) {
+  button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(255, 255, 255, 0.2) solid;
+  }
   .navbar p {
     font-size: medium;
     max-width: 70vh;
   }
 }
 @media screen and (max-width: 992px) and (min-width: 680px) {
+  button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(255, 255, 255, 0.2) solid;
+  }
   .navbar p {
     position: absolute;
     font-size: medium;
@@ -264,6 +273,10 @@ button {
   }
 }
 @media screen and (max-width: 679px) {
+  button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(255, 255, 255, 0.2) solid;
+  }
   .navbar {
     justify-content: center;
     margin-left: 10px;
@@ -290,7 +303,7 @@ button {
     padding-right: 4px;
     background: rgba(89, 89, 89, 0.05);
     box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+    border: 0.5px rgba(255, 255, 255, 0.2) solid;
     justify-content: center;
     display: inline-flex;
     padding: 5px;
@@ -303,11 +316,23 @@ button {
   .mainContent .centerTitle {
     max-height: 330px;
   }
+  .mainContent .social svg {
+    fill: white;
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(255, 255, 255, 0.2) solid;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    transition: 0.3s ease-in-out;
+  }
   .presentation .presentationText {
     max-width: 300px;
     height: 915px;
   }
   .presentation .buttonContainer {
     flex-direction: column;
+  }
+  .presentation button {
+    max-width: 280px;
   }
 }/*# sourceMappingURL=homepageStyle.css.map */

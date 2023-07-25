@@ -81,38 +81,59 @@ const socialButton = {
   linkedin: document.querySelector("#linkedin"),
 };
 
-function moveSocialMedia(event, social, color) {
-  if (event.type === "mouseover") {
-    console.log(social + "Test hover");
-    socialButton[social].style.fill = color;
-    socialButton[social].classList.add("moveIcon");
-  } else if (event.type === "mouseout") {
-    socialButton[social].style.fill = "black";
-    socialButton[social].classList.remove("moveIcon");
-  }
-}
+function toogleStyle() {
+  const maxWidth = 1320;
+  const styleElement = socialButton;
 
-function addEventListenersToSocialButton(social, color) {
-  const button = socialButton[social];
-  button.addEventListener("mouseover", (event) =>
-    moveSocialMedia(event, social, color)
-  );
-  button.addEventListener("mouseout", (event) =>
-    moveSocialMedia(event, social, "black")
-  );
-}
+  if (window.innerWidth < maxWidth) {
+    const socialIcons = document.querySelectorAll("svg");
+    socialIcons.forEach((icon) => {
+      icon.classList.add("reflection");
+      icon.classList.add("shimmer");
+    });
+  } else {
+    function moveSocialMedia(event, social, color) {
+      if (event.type === "mouseover") {
+        console.log(social + "Test hover");
+        socialButton[social].style.fill = color;
+        socialButton[social].classList.add("moveIcon");
+      } else if (event.type === "mouseout") {
+        socialButton[social].style.fill = "black";
+        socialButton[social].classList.remove("moveIcon");
+      }
+    }
 
-for (const social in socialButton) {
-  if (social === "facebook") {
-    addEventListenersToSocialButton(social, "rgba(59, 89, 152, 100%)");
-  } else if (social === "github") {
-    addEventListenersToSocialButton(social, "rgba(150, 3, 0, 100%)");
-  } else if (social === "instagram") {
-    addEventListenersToSocialButton(social, "rgba(195, 42, 163, 100%)");
-  } else if (social === "linkedin") {
-    addEventListenersToSocialButton(social, "rgba(10, 102, 194, 100%)");
+    function addEventListenersToSocialButton(social, color) {
+      const button = socialButton[social];
+      button.addEventListener("mouseover", (event) =>
+        moveSocialMedia(event, social, color)
+      );
+      button.addEventListener("mouseout", (event) =>
+        moveSocialMedia(event, social, "black")
+      );
+    }
+
+    for (const social in socialButton) {
+      switch (social) {
+        case "facebook":
+          addEventListenersToSocialButton(social, "rgba(59, 89, 152, 100%)");
+          break;
+        case "github":
+          addEventListenersToSocialButton(social, "rgba(150, 3, 0, 100%)");
+          break;
+        case "instagram":
+          addEventListenersToSocialButton(social, "rgba(195, 42, 163, 100%)");
+          break;
+        case "linkedin":
+          addEventListenersToSocialButton(social, "rgba(10, 102, 194, 100%)");
+          break;
+        default:
+          break;
+      }
+    }
   }
 }
 
 drawStars();
 updateStarOpacity();
+toogleStyle();
