@@ -275,7 +275,7 @@ button {
 @media screen and (max-width: 679px) {
   button {
     box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(255, 255, 255, 0.2) solid;
+    border: 0.5px rgba(255, 255, 255, 0.4) solid;
   }
   .navbar {
     justify-content: center;
@@ -315,6 +315,10 @@ button {
   }
   .mainContent .centerTitle {
     max-height: 330px;
+  }
+  .mainContent .centerTitle button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(255, 255, 255, 0.4) solid;
   }
   .mainContent .social svg {
     fill: white;
