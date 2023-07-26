@@ -72,18 +72,16 @@ $pictograms: (
   }
 }
 
-#scene {
+#carousel {
   display: flex;
   align-items: center;
   justify-content: left;
   width: $scene-width;
   height: $scene-height;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  top: 15vh;
+  left: 50%;
+  transform: translate(-50%);
   background-color: get-color(bg-dark);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   overflow: hidden;
@@ -192,4 +190,18 @@ $pictograms: (
       }
     }
   }
+}
+
+#individual-creation {
+  width: $scene-width;
+  height: $scene-height;
+  position: absolute;
+  top: 70vh;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: get-color(bg-dark);
+  box-shadow: get-color(shadow-box);
+  border-radius: get-decoration(border);
+  display: flex;
+  justify-content: center;
 }

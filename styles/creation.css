@@ -18,25 +18,23 @@
     opacity: 0;
   }
 }
-#scene {
+#carousel {
   display: flex;
   align-items: center;
   justify-content: left;
   width: 100vh;
   height: 50vh;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  top: 15vh;
+  left: 50%;
+  transform: translate(-50%);
   background-color: rgb(34, 34, 34);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
 }
-#scene #left-zone {
+#carousel #left-zone {
   background: rgb(34, 34, 34);
   height: 75%;
   flex-grow: 0;
@@ -48,7 +46,7 @@
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
   margin-left: 2vh;
 }
-#scene #left-zone .list {
+#carousel #left-zone .list {
   display: flex;
   list-style: none;
   align-content: stretch;
@@ -57,24 +55,24 @@
   margin: 0;
   padding: 0;
 }
-#scene #left-zone .list li.item input[type=radio] {
+#carousel #left-zone .list li.item input[type=radio] {
   display: none;
 }
-#scene #left-zone .list li.item input[type=radio] ~ label {
+#carousel #left-zone .list li.item input[type=radio] ~ label {
   display: block;
   opacity: 0.5;
   height: 50px;
   text-align: center;
   line-height: 50px;
 }
-#scene #left-zone .list li.item input[type=radio] ~ label:first-letter {
+#carousel #left-zone .list li.item input[type=radio] ~ label:first-letter {
   text-transform: uppercase;
 }
-#scene #left-zone .list li.item input[type=radio] ~ label:hover {
+#carousel #left-zone .list li.item input[type=radio] ~ label:hover {
   opacity: 0.75;
   cursor: pointer;
 }
-#scene #left-zone .list li.item input[type=radio] ~ .content {
+#carousel #left-zone .list li.item input[type=radio] ~ .content {
   position: absolute;
   left: 35vh;
   top: -50vh;
@@ -88,7 +86,7 @@
   justify-content: center;
   flex-direction: column;
 }
-#scene #left-zone .list li.item input[type=radio] ~ .content.content_creation1 .picto {
+#carousel #left-zone .list li.item input[type=radio] ~ .content.content_creation1 .picto {
   height: 90%;
   width: 90%;
   background-image: url("../assets/images/example_01.jpg");
@@ -98,7 +96,7 @@
   border-radius: 10px;
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
 }
-#scene #left-zone .list li.item input[type=radio] ~ .content.content_creation2 .picto {
+#carousel #left-zone .list li.item input[type=radio] ~ .content.content_creation2 .picto {
   height: 90%;
   width: 90%;
   background-image: url("../assets/images/Not_finished.jpg");
@@ -108,7 +106,7 @@
   border-radius: 10px;
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
 }
-#scene #left-zone .list li.item input[type=radio] ~ .content.content_creation3 .picto {
+#carousel #left-zone .list li.item input[type=radio] ~ .content.content_creation3 .picto {
   height: 90%;
   width: 90%;
   background-image: url("../assets/images/Not_finished.jpg");
@@ -118,7 +116,7 @@
   border-radius: 10px;
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
 }
-#scene #left-zone .list li.item input[type=radio] ~ .content.content_creation4 .picto {
+#carousel #left-zone .list li.item input[type=radio] ~ .content.content_creation4 .picto {
   height: 90%;
   width: 90%;
   background-image: url("../assets/images/Not_finished.jpg");
@@ -128,29 +126,43 @@
   border-radius: 10px;
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
 }
-#scene #left-zone .list li.item input[type=radio]:checked ~ label {
+#carousel #left-zone .list li.item input[type=radio]:checked ~ label {
   opacity: 1;
   animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
-#scene #left-zone .list li.item input[type=radio]:checked ~ label.label_creation1 {
+#carousel #left-zone .list li.item input[type=radio]:checked ~ label.label_creation1 {
   color: #d64541;
   border-right: solid 4px #d64541;
 }
-#scene #left-zone .list li.item input[type=radio]:checked ~ label.label_creation2 {
+#carousel #left-zone .list li.item input[type=radio]:checked ~ label.label_creation2 {
   color: #f5d76e;
   border-right: solid 4px #f5d76e;
 }
-#scene #left-zone .list li.item input[type=radio]:checked ~ label.label_creation3 {
+#carousel #left-zone .list li.item input[type=radio]:checked ~ label.label_creation3 {
   color: #00b16a;
   border-right: solid 4px #00b16a;
 }
-#scene #left-zone .list li.item input[type=radio]:checked ~ label.label_creation4 {
+#carousel #left-zone .list li.item input[type=radio]:checked ~ label.label_creation4 {
   color: #f27935;
   border-right: solid 4px #f27935;
 }
-#scene #left-zone .list li.item input[type=radio]:checked ~ .content {
+#carousel #left-zone .list li.item input[type=radio]:checked ~ .content {
   animation-duration: 0.75s;
   animation-name: slidein;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+#individual-creation {
+  width: 100vh;
+  height: 50vh;
+  position: absolute;
+  top: 70vh;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: rgb(34, 34, 34);
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=creation.css.map */
