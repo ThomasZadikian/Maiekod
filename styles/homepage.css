@@ -1,14 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
-* {
-  font-family: "Jost", sans-serif;
-  color: white;
-}
-* html,
-* body {
-  background-color: #1f2022;
-  margin: 0;
-}
-
 @keyframes shine {
   0% {
     color: #c1c1c1;
@@ -45,10 +35,20 @@
     transform: translateX(15px);
   }
 }
+* {
+  font-family: "Jost", sans-serif;
+  color: rgb(193, 193, 193);
+}
+* html,
+* body {
+  background-color: rgb(25, 25, 25);
+  margin: 0;
+}
+
 button {
   padding-top: 4px;
   padding-bottom: 4px;
-  background: rgba(89, 89, 89, 0.05);
+  background: rgb(89, 89, 89);
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   overflow: hidden;
@@ -75,9 +75,8 @@ button {
 
 .navbar {
   display: flex;
-  margin-right: 3%;
+  margin: 1vw 3vw 0 2vw;
   justify-content: flex-start;
-  margin-top: 5px;
 }
 .navbar p {
   margin-left: 10px;
@@ -88,30 +87,30 @@ button {
 }
 .navbar .navbar-left {
   display: flex;
-  margin-left: 2%;
 }
 .navbar .navbar-right {
   display: flex;
   margin-left: auto;
-  gap: 2vh;
+  gap: 3vw;
 }
 .navbar .icon {
   height: 50px;
   width: 50px;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
 }
 .navbar a {
-  color: #c1c1c1;
+  color: rgb(255, 255, 255);
   font-size: 25px;
   text-decoration: none;
-  background: linear-gradient(to top, #c1c1c1 0%, white 4px, transparent 5px) no-repeat;
-  background-size: 0 100%;
+  background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(193, 193, 193) 4px, transparent 5px) no-repeat;
+  background-size: 0 65%;
   transition: background-size 0.3s;
   animation: shine 2s linear infinite reverse;
 }
 .navbar a:hover {
   animation: none;
   color: white;
-  background-size: 100% 100%;
+  background-size: 100% 65%;
   transition: 0.3s;
 }
 
@@ -153,7 +152,12 @@ button {
   }
   .navbar p {
     font-size: medium;
-    max-width: 70vh;
+    max-width: 55vw;
+  }
+  .social {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
   }
 }
 @media screen and (max-width: 992px) and (min-width: 680px) {
@@ -211,6 +215,9 @@ button {
   }
   .mainContent .social {
     flex-direction: row;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
   }
   .social svg {
     fill: white;
@@ -221,4 +228,94 @@ button {
     width: 50px;
     transition: 0.3s ease-in-out;
   }
-}/*# sourceMappingURL=generalStyle.css.map */
+}
+.mainContent {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainContent .centerTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainContent .centerTitle svg {
+  stroke: #595959;
+  stroke-width: 0;
+  animation: floatAndPulse 4s ease-in-out infinite;
+  height: 430px;
+  width: 440px;
+}
+.mainContent .centerTitle button {
+  padding-left: 5%;
+  padding-right: 5%;
+  background: #1f2022;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  color: white;
+  font-size: 35px;
+  animation: floatAndPulseButton 4s ease-in-out infinite;
+}
+
+.presentation {
+  display: none;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 1100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.presentation .presentationText {
+  position: relative;
+  height: 550px;
+  width: 750px;
+  margin-bottom: 10vh;
+  text-align: justify;
+  padding: 20px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(73, 73, 73, 0.05) 0%, rgba(89, 89, 89, 0) 100%);
+  box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0.5);
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+}
+.presentation .presentationText .buttonContainer {
+  position: absolute;
+  justify-content: center;
+  bottom: 10px;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 35px;
+}
+.presentation .presentationText .buttonContainer button {
+  height: 60px;
+  width: 350px;
+}
+
+@media screen and (max-width: 679px) {
+  .mainContent .centerTitle {
+    max-height: 330px;
+  }
+  .mainContent .centerTitle button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(255, 255, 255, 0.4) solid;
+  }
+  .presentation .presentationText {
+    max-width: 300px;
+    height: 915px;
+  }
+  .presentation .buttonContainer {
+    flex-direction: column;
+  }
+  .presentation button {
+    max-width: 280px;
+  }
+}/*# sourceMappingURL=homepage.css.map */

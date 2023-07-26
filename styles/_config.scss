@@ -1,0 +1,86 @@
+// Colors & style variables
+
+$colors: (
+  fontColor: rgba(193, 193, 193, 1),
+  default-color: rgb(255, 255, 255),
+  bg-dark: rgba(25, 25, 25, 1),
+  bg-button: rgba(89, 89, 89, 1),
+);
+
+$decoration: (
+  shadow-box: 0px 1px 9px 5px rgba(0, 0, 0, 0.25),
+  border-radius: 10px,
+  border: 0.5px rgba(0, 0, 0, 0.2) solid,
+  white-border: 0.5px rgba(255, 255, 255, 0.25) solid,
+);
+
+$pictograms: (
+  creation1: url("../assets/images/example_01.jpg"),
+  default-picto: url("../assets/images/Not_finished.jpg"),
+);
+
+// Function
+@function get-color($color-name) {
+  @if map-has-key($colors, $color-name) {
+    @return map-get($colors, $color-name);
+  } @else {
+    @return map-get($colors, default-color);
+  }
+}
+
+@function get-decoration($decoration-name) {
+  @if map-has-key($decoration, $decoration-name) {
+    @return map-get($decoration, $decoration-name);
+  } @else {
+    @return map-get($decoration, default-decoration);
+  }
+}
+
+@function get-picto-url($picto-name) {
+  @if map-has-key($pictograms, $picto-name) {
+    @return map-get($pictograms, $picto-name);
+  } @else {
+    @return map-get($pictograms, default-picto);
+  }
+}
+
+// Keyframes
+
+@keyframes shine {
+  0% {
+    color: #c1c1c1;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: #c1c1c1;
+  }
+}
+
+@keyframes floatAndPulseButton {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(7px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}

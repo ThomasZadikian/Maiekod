@@ -1,65 +1,25 @@
 // General style for all pages
-
+@import "../styles/_config.scss";
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
 
 * {
   font-family: "Jost", sans-serif;
-  color: white;
+  color: get-color(fontColor);
   html,
   body {
-    background-color: #1f2022;
+    background-color: get-color(bg-dark);
     margin: 0;
-  }
-}
-
-// Animation for shine navBar
-@keyframes shine {
-  0% {
-    color: #c1c1c1;
-  }
-  50% {
-    color: white;
-  }
-  100% {
-    color: #c1c1c1;
-  }
-}
-
-@keyframes floatAndPulseButton {
-  0% {
-    transform: scale(1);
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-  }
-  50% {
-    transform: scale(1.02);
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.5);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-  }
-}
-
-@keyframes floatAnimation {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(7px);
-  }
-  100% {
-    transform: translateX(15px);
   }
 }
 
 button {
   padding-top: 4px;
   padding-bottom: 4px;
-  background: rgba(89, 89, 89, 0.05);
-  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  background: get-color(bg-button);
+  box-shadow: get-decoration(shadow-box);
+  border-radius: get-decoration(border-radius);
   overflow: hidden;
-  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  border: get-decoration(border);
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -82,42 +42,46 @@ button {
 
 .navbar {
   display: flex;
-  margin-right: 3%;
+  margin: 1vw 3vw 0 2vw;
   justify-content: flex-start;
-  margin-top: 5px;
   p {
     margin-left: 10px;
     padding: 5px;
     background-color: red;
-    border-radius: 5px;
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border-radius: get-decoration(border-radius)-5px;
+    box-shadow: get-decoration(shadow-box);
   }
   .navbar-left {
     display: flex;
-    margin-left: 2%;
   }
   .navbar-right {
     display: flex;
     margin-left: auto;
-    gap: 2vh;
+    gap: 3vw;
   }
   .icon {
     height: 50px;
     width: 50px;
+    box-shadow: get-decoration(shadow-box);
   }
   a {
-    color: #c1c1c1;
+    color: get-color(default-color);
     font-size: 25px;
     text-decoration: none;
-    background: linear-gradient(to top, #c1c1c1 0%, white 4px, transparent 5px)
+    background: linear-gradient(
+        to top,
+        get-color(default-color) 0%,
+        get-color(fontColor) 4px,
+        transparent 5px
+      )
       no-repeat;
-    background-size: 0 100%;
+    background-size: 0 65%;
     transition: background-size 0.3s;
     animation: shine 2s linear infinite reverse;
     &:hover {
       animation: none;
       color: white;
-      background-size: 100% 100%;
+      background-size: 100% 65%;
       transition: 0.3s;
     }
   }
@@ -168,8 +132,13 @@ button {
   .navbar {
     p {
       font-size: medium;
-      max-width: 70vh;
+      max-width: 55vw;
     }
+  }
+  .social {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
   }
 }
 
@@ -238,6 +207,9 @@ button {
   .mainContent {
     .social {
       flex-direction: row;
+      position: absolute;
+      right: 10px;
+      bottom: 0;
     }
   }
   .social {
