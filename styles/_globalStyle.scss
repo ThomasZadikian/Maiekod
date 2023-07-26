@@ -126,8 +126,8 @@ button {
 //Responsive for large screen
 @media screen and (max-width: 1320px) and (min-width: 992px) {
   button {
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(255, 255, 255, 0.2) solid;
+    box-shadow: get-decoration(shadow-box);
+    border: get-decoration(border);
   }
   .navbar {
     p {
@@ -145,8 +145,8 @@ button {
 // Responsive for medium screen
 @media screen and (max-width: 992px) and (min-width: 680px) {
   button {
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(255, 255, 255, 0.2) solid;
+    box-shadow: get-decoration(shadow-box);
+    border: get-decoration(border);
   }
   .navbar {
     p {
@@ -167,8 +167,8 @@ button {
 
 @media screen and (max-width: 679px) {
   button {
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(255, 255, 255, 0.4) solid;
+    box-shadow: get-decoration(shadow-box);
+    border: get-decoration(border);
   }
   .navbar {
     justify-content: center;
@@ -193,8 +193,8 @@ button {
         padding-left: 4px;
         padding-right: 4px;
         background: rgba(89, 89, 89, 0.05);
-        box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-        border: 0.5px rgba(255, 255, 255, 0.2) solid;
+        box-shadow: get-decoration(shadow-box);
+        border: get-decoration(border);
         justify-content: center;
         display: inline-flex;
         padding: 5px;
@@ -215,8 +215,8 @@ button {
   .social {
     svg {
       fill: white;
-      box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-      border: 0.5px rgba(255, 255, 255, 0.2) solid;
+      box-shadow: get-decoration(shadow-box);
+      border: get-decoration(border);
       border-radius: 50%;
       height: 50px;
       width: 50px;
