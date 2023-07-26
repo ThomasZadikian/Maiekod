@@ -75,7 +75,6 @@ $pictograms: (
 #carousel {
   display: flex;
   align-items: center;
-  justify-content: left;
   width: $scene-width;
   height: $scene-height;
   position: absolute;
@@ -195,13 +194,28 @@ $pictograms: (
 #individual-creation {
   width: $scene-width;
   height: $scene-height;
-  position: absolute;
-  top: 70vh;
+  position: relative;
+  flex-direction: column;
+  top: 65vh;
   left: 50%;
+  bottom: 150px;
+  margin-bottom: 150px;
   transform: translate(-50%);
   background-color: get-color(bg-dark);
   box-shadow: get-color(shadow-box);
   border-radius: get-decoration(border);
   display: flex;
   justify-content: center;
+  h1 {
+    align-self: center;
+  }
+  .list-individuals {
+    position: relative;
+    margin: auto;
+    width: 90vh;
+    height: 40vh;
+    background-color: get-color(bg-dark);
+    box-shadow: get-color(shadow-box);
+    border-radius: get-decoration(border);
+  }
 }

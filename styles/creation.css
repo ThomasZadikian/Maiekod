@@ -21,7 +21,6 @@
 #carousel {
   display: flex;
   align-items: center;
-  justify-content: left;
   width: 100vh;
   height: 50vh;
   position: absolute;
@@ -156,13 +155,28 @@
 #individual-creation {
   width: 100vh;
   height: 50vh;
-  position: absolute;
-  top: 70vh;
+  position: relative;
+  flex-direction: column;
+  top: 65vh;
   left: 50%;
+  bottom: 150px;
+  margin-bottom: 150px;
   transform: translate(-50%);
   background-color: rgb(34, 34, 34);
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   display: flex;
   justify-content: center;
+}
+#individual-creation h1 {
+  align-self: center;
+}
+#individual-creation .list-individuals {
+  position: relative;
+  margin: auto;
+  width: 90vh;
+  height: 40vh;
+  background-color: rgb(34, 34, 34);
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }/*# sourceMappingURL=creation.css.map */
