@@ -1,9 +1,3 @@
-$menu-width: 45vh;
-$scene-width: 60vw;
-$scene-height: 25vw;
-
-$sections: creation1, creation2, creation3, creation4;
-
 $colors: (
   creation1: #d64541,
   creation2: #f5d76e,
@@ -48,30 +42,6 @@ $pictograms: (
   }
 }
 
-@keyframes slidein {
-  0% {
-    top: -$scene-height;
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-    top: 0px;
-  }
-}
-
-@keyframes slideout {
-  0% {
-    top: 0;
-    opacity: 1;
-  }
-
-  100% {
-    top: -$scene-height;
-    opacity: 0;
-  }
-}
-
 @mixin circle($i) {
   border-radius: 100%;
   height: $i;
@@ -89,17 +59,14 @@ body {
 
 body {
   background: $bgBlue;
-  font-family: $font, sans-serif;
-  overflow: hidden;
 }
+
 .creationMain {
-  .center {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-  }
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
 
   .wrapper {
     display: flex;
@@ -154,13 +121,15 @@ body {
   .map {
     margin-top: 1em;
     & > button {
-      all: unset;
+      box-shadow: none;
       background: lighten($cardBlue, 10);
       cursor: pointer;
       margin: 0 0.125em;
       position: relative;
+      left: 50%;
+      transform: translate(-50%, -50%);
       user-select: none;
-      @include circle(1em);
+      @include circle(1.5em);
 
       &.active {
         &:after {
@@ -170,38 +139,9 @@ body {
           position: absolute;
           transform: translate(-50%, -50%);
           top: 50%;
-          @include circle(0.5em);
+          @include circle(1em);
         }
       }
     }
-  }
-}
-
-#individual-creation {
-  width: $scene-width;
-  height: $scene-height;
-  // position: relative;
-  flex-direction: column;
-  // top: 65vh;
-  // left: 50%;
-  // bottom: 150px;
-  margin-bottom: 150px;
-  transform: translate(-50%);
-  background-color: get-color(bg-dark);
-  box-shadow: get-color(shadow-box);
-  border-radius: get-decoration(border);
-  display: flex;
-  justify-content: center;
-  h1 {
-    align-self: center;
-  }
-  .list-individuals {
-    position: relative;
-    margin: auto;
-    width: 90vh;
-    height: 40vh;
-    background-color: get-color(bg-dark);
-    box-shadow: get-color(shadow-box);
-    border-radius: get-decoration(border);
   }
 }
