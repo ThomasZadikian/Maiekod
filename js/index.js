@@ -84,7 +84,6 @@ function toogleStyle() {
   } else {
     function moveSocialMedia(event, social, color) {
       if (event.type === "mouseover") {
-        console.log(social + "Test hover");
         socialButton[social].style.fill = color;
         socialButton[social].classList.add("moveIcon");
       } else if (event.type === "mouseout") {

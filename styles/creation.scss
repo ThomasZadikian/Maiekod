@@ -1,0 +1,195 @@
+$menu-width: 35vh;
+$scene-width: 100vh;
+$scene-height: 50vh;
+
+$sections: creation1, creation2, creation3, creation4;
+
+$colors: (
+  creation1: #d64541,
+  creation2: #f5d76e,
+  creation3: #00b16a,
+  creation4: #f27935,
+  default-color: rgb(255, 255, 255),
+  bg-dark: rgb(34, 34, 34),
+  shadow-box: 0px 1px 9px 5px rgba(0, 0, 0, 0.25),
+);
+
+$decoration: (
+  border: 10px,
+  default-decoration: 10px,
+);
+
+$pictograms: (
+  creation1: url("../assets/images/example_01.jpg"),
+  default-picto: url("../assets/images/Not_finished.jpg"),
+);
+
+@function get-color($color-name) {
+  @if map-has-key($colors, $color-name) {
+    @return map-get($colors, $color-name);
+  } @else {
+    @return map-get($colors, default-color);
+  }
+}
+
+@function get-decoration($decoration-name) {
+  @if map-has-key($decoration, $decoration-name) {
+    @return map-get($decoration, $decoration-name);
+  } @else {
+    @return map-get($decoration, default-decoration);
+  }
+}
+
+@function get-picto-url($picto-name) {
+  @if map-has-key($pictograms, $picto-name) {
+    @return map-get($pictograms, $picto-name);
+  } @else {
+    @return map-get($pictograms, default-picto);
+  }
+}
+
+@keyframes slidein {
+  0% {
+    top: -$scene-height;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+@keyframes slideout {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+
+  100% {
+    top: -$scene-height;
+    opacity: 0;
+  }
+}
+
+#scene {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: $scene-width;
+  height: $scene-height;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: get-color(bg-dark);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+  border-radius: get-decoration(border);
+  box-shadow: get-color(shadow-box);
+
+  #left-zone {
+    background: get-color(bg-dark);
+    height: 75%;
+    flex-grow: 0;
+    display: flex;
+    width: $menu-width;
+    align-items: center;
+    justify-content: left;
+    border-radius: get-decoration(border);
+    box-shadow: get-color(shadow-box);
+    margin-left: 2vh;
+
+    .list {
+      display: flex;
+      list-style: none;
+      align-content: stretch;
+      flex-direction: column;
+      flex-grow: 1;
+      margin: 0;
+      padding: 0;
+
+      li.item {
+        input[type="radio"] {
+          display: none;
+
+          & ~ label {
+            display: block;
+            opacity: 0.5;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+
+            &:first-letter {
+              text-transform: uppercase;
+            }
+
+            &:hover {
+              opacity: 0.75;
+              cursor: pointer;
+            }
+          }
+
+          & ~ .content {
+            position: absolute;
+            left: $menu-width;
+            top: -$scene-height;
+            width: $scene-width - $menu-width;
+            height: $scene-height;
+
+            animation-duration: 0.75s;
+            animation-name: slideout;
+            animation-timing-function: ease-out;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            @each $item in $sections {
+              &.content_#{$item} {
+                .picto {
+                  height: 90%;
+                  width: 90%;
+                  background-image: get-picto-url($item);
+                  background-position: center;
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  border-radius: get-decoration(border);
+                  box-shadow: get-color(shadow-box);
+                }
+              }
+            }
+          }
+
+          &:checked {
+            & ~ label {
+              opacity: 1;
+              animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+              @each $item in $sections {
+                &.label_#{$item} {
+                  color: get-color($item);
+                  border-right: solid 4px get-color($item);
+                }
+              }
+            }
+
+            & ~ .content {
+              animation-duration: 0.75s;
+              animation-name: slidein;
+              animation-fill-mode: forwards;
+              animation-timing-function: cubic-bezier(
+                0.455,
+                0.03,
+                0.515,
+                0.955
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+}
