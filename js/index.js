@@ -10,7 +10,6 @@ function parallaxEffect(layer, scrollSpeed) {
   }
   scrollAnimation();
 }
-parallaxEffect(".twinkling", 0.3);
 
 const starsCanvas = document.getElementById("starsCanvas");
 const ctx = starsCanvas.getContext("2d");
@@ -123,6 +122,4 @@ function toogleStyle() {
   }
 }
 
-drawStars();
-updateStarOpacity();
-toogleStyle();
+export { drawStars, updateStarOpacity, toogleStyle, parallaxEffect };
