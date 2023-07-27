@@ -64,12 +64,12 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: -1;
 }
 .stars-container #starsCanvas {
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 
@@ -301,30 +301,82 @@ body {
   opacity: 1;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 992px) and (min-width: 680px) {
+  .navbar p {
+    z-index: 1;
+  }
+  .timeline ul {
+    margin-top: 5vw;
+  }
   .timeline ul li div {
-    width: 250px;
+    width: 40vw;
     flex-direction: column;
   }
   .timeline ul li div div {
     width: 80%;
     margin: 10px;
   }
+  .timeline ul li:nth-of-type(odd) > div {
+    left: 2vw;
+  }
   .timeline ul li:nth-of-type(even) > div {
-    left: -289px;
-  }
-}
-@media screen and (max-width: 600px) {
-  body {
-    background: #8bfff4;
-  }
-  .timeline ul li {
-    margin-left: 20px;
+    left: -50vw;
+    margin-right: 5vw;
   }
   .timeline ul li div {
-    width: calc(100vw - 91px);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
   }
-  .timeline ul li:nth-of-type(even) > div {
-    left: 45px;
+  .timeline ul li:nth-of-type(odd) div {
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  .timeline ul li:nth-of-type(even) div {
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  .timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 679px) {
+  .mainContent .timeline ul li::after {
+    z-index: 0;
+  }
+  .mainContent .timeline ul li div {
+    width: 80vw;
+    z-index: 1;
+  }
+  .mainContent .timeline ul li div .discovery {
+    width: 90%;
+    margin: 5px;
+  }
+  .mainContent .timeline ul li:nth-of-type(odd) > div {
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .mainContent .timeline ul li:nth-of-type(even) > div {
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .mainContent .social {
+    display: none;
+  }
+  .timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .timeline ul li:nth-of-type(odd) div {
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  .timeline ul li:nth-of-type(even) div {
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  .timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
   }
 }/*# sourceMappingURL=creation.css.map */

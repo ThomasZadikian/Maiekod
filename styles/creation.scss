@@ -98,21 +98,62 @@ body {
   }
 }
 
-@media screen and (max-width: 900px) {
+//Responsive for medium screen
+@media screen and (max-width: 992px) and (min-width: 680px) {
+  .navbar {
+    p {
+      z-index: 1;
+    }
+  }
   .timeline {
     ul {
+      margin-top: 5vw;
       li {
         div {
-          width: 250px;
+          width: 40vw;
           flex-direction: column;
           div {
             width: 80%;
             margin: 10px;
           }
         }
+        &:nth-of-type(odd) {
+          > div {
+            left: 2vw;
+          }
+        }
         &:nth-of-type(even) {
           > div {
-            left: -289px;
+            left: -50vw;
+            margin-right: 5vw;
+          }
+        }
+      }
+    }
+  }
+  .timeline {
+    ul {
+      li {
+        div {
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.5s ease-in-out;
+        }
+        &:nth-of-type(odd) {
+          div {
+            transform: translate3d(0, 0, 0) rotate(10deg);
+          }
+        }
+        &:nth-of-type(even) {
+          div {
+            transform: translate3d(0, 0, 0) rotate(10deg);
+          }
+        }
+        &.in-view {
+          div {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
           }
         }
       }
@@ -120,20 +161,65 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
-  body {
-    background: #8bfff4;
+//Responsive for small screen
+@media screen and (max-width: 679px) {
+  .mainContent {
+    .timeline {
+      ul {
+        li {
+          &::after {
+            z-index: 0;
+          }
+          div {
+            width: 80vw;
+            z-index: 1;
+            .discovery {
+              width: 90%;
+              margin: 5px;
+            }
+          }
+          &:nth-of-type(odd) {
+            > div {
+              left: 50%;
+              transform: translate(-50%);
+            }
+          }
+          &:nth-of-type(even) {
+            > div {
+              left: 50%;
+              transform: translate(-50%);
+            }
+          }
+        }
+      }
+    }
+    .social {
+      display: none;
+    }
   }
   .timeline {
     ul {
       li {
-        margin-left: 20px;
         div {
-          width: calc(100vw - 91px);
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.5s ease-in-out;
+        }
+        &:nth-of-type(odd) {
+          div {
+            transform: translate3d(0, 0, 0) rotate(10deg);
+          }
         }
         &:nth-of-type(even) {
-          > div {
-            left: 45px;
+          div {
+            transform: translate3d(0, 0, 0) rotate(10deg);
+          }
+        }
+        &.in-view {
+          div {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
           }
         }
       }

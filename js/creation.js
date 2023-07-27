@@ -27,7 +27,7 @@ let engagementArray = {
 function createCard() {
   let cardContainer = document.querySelector("#cardContainer");
   for (let engagement in engagementArray) {
-    if (engagement != "Une question, un besoin ? ") {
+    if (engagement != "Une question, un besoin ?") {
       cardContainer.innerHTML += `
         <li id="card">
         <div>
