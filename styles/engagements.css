@@ -270,9 +270,10 @@ body {
 .timeline ul li .cardBox #boxInCard p {
   text-align: center;
 }
+.timeline ul li .cardBox #boxInCard a,
 .timeline ul li .cardBox #boxInCard button {
-  height: 40%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
 }
 .timeline ul li .cardBox .discovery {
   margin-right: 10px;
