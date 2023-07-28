@@ -48,7 +48,7 @@
 button {
   padding-top: 4px;
   padding-bottom: 4px;
-  background: rgb(89, 89, 89);
+  background: rgb(25, 25, 25);
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   overflow: hidden;
@@ -86,8 +86,8 @@ button {
   gap: 3vw;
 }
 .navbar .icon {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
 }
 .navbar a {
@@ -95,14 +95,14 @@ button {
   font-size: 25px;
   text-decoration: none;
   background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(193, 193, 193) 4px, transparent 5px) no-repeat;
-  background-size: 0 65%;
+  background-size: 0 85%;
   transition: background-size 0.3s;
   animation: shine 2s linear infinite reverse;
 }
 .navbar a:hover {
   animation: none;
   color: white;
-  background-size: 100% 65%;
+  background-size: 100% 85%;
   transition: 0.3s;
 }
 
