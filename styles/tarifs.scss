@@ -4,8 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .tarifs,
+  .tarification,
   .contact {
+    background-color: get-color(bg-dark);
     height: 35vw;
     width: 35vw;
     margin: 1vw;
@@ -19,7 +20,7 @@
     align-items: center;
     padding: 1vw;
   }
-  .tarifs {
+  .tarification {
     &:first-child {
       text-align: center;
     }
@@ -27,6 +28,12 @@
       color: get-color(default-color);
       flex: auto;
       margin-bottom: 2vw;
+    }
+    #tarifs,
+    #services {
+      border: get-decoration(border);
+      box-shadow: get-decoration(small-shadow-box);
+      border-radius: get-decoration(border-radius);
     }
     h1 {
       margin-top: 1vw;

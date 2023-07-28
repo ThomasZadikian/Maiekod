@@ -235,8 +235,9 @@ button {
   justify-content: center;
   align-items: center;
 }
-.tarifsContact .tarifs,
+.tarifsContact .tarification,
 .tarifsContact .contact {
+  background-color: rgb(25, 25, 25);
   height: 35vw;
   width: 35vw;
   margin: 1vw;
@@ -250,32 +251,38 @@ button {
   align-items: center;
   padding: 1vw;
 }
-.tarifsContact .tarifs:first-child {
+.tarifsContact .tarification:first-child {
   text-align: center;
 }
-.tarifsContact .tarifs * > :not(footer) {
+.tarifsContact .tarification * > :not(footer) {
   color: rgb(255, 255, 255);
   flex: auto;
   margin-bottom: 2vw;
 }
-.tarifsContact .tarifs h1 {
+.tarifsContact .tarification #tarifs,
+.tarifsContact .tarification #services {
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  box-shadow: 0px 1px 5px 5px rgba(15, 15, 15, 0.25);
+  border-radius: 10px;
+}
+.tarifsContact .tarification h1 {
   margin-top: 1vw;
 }
-.tarifsContact .tarifs .tarifsHoraires {
+.tarifsContact .tarification .tarifsHoraires {
   font-weight: 700;
 }
-.tarifsContact .tarifs .services {
+.tarifsContact .tarification .services {
   text-decoration: underline;
 }
-.tarifsContact .tarifs ul {
+.tarifsContact .tarification ul {
   list-style: none;
 }
-.tarifsContact .tarifs footer {
+.tarifsContact .tarification footer {
   margin-top: auto;
   position: relative;
   bottom: 0;
 }
-.tarifsContact .tarifs footer p {
+.tarifsContact .tarification footer p {
   font-size: small;
 }
 .tarifsContact .contact .contactInput {
