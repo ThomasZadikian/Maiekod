@@ -105,6 +105,14 @@ body {
       z-index: 1;
     }
   }
+  .mainContent {
+    .social {
+      position: static;
+      svg {
+        fill: get-color(default-color);
+      }
+    }
+  }
   .timeline {
     ul {
       margin-top: 5vw;
@@ -194,7 +202,7 @@ body {
       }
     }
     .social {
-      display: none;
+      position: static;
     }
   }
   .timeline {
