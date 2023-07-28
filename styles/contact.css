@@ -315,4 +315,22 @@ button {
 }
 .tarifsContact .contact [type=submit]:hover {
   background: #cc4949;
+}
+
+@media screen and (max-width: 679px) {
+  .tarifsContact {
+    flex-direction: column;
+  }
+  .tarifsContact .tarification,
+  .tarifsContact .contact {
+    background-color: rgb(25, 25, 25);
+  }
+  .tarifsContact .tarification,
+  .tarifsContact .contact {
+    height: 100%;
+    width: 90%;
+  }
+  .mainContent .social {
+    position: static;
+  }
 }/*# sourceMappingURL=contact.css.map */
