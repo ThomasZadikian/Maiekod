@@ -185,7 +185,7 @@ button {
         padding-bottom: 4px;
         padding-left: 4px;
         padding-right: 4px;
-        background: rgba(89, 89, 89, 0.05);
+        background: get-color(bg-dark);
         box-shadow: get-decoration(shadow-box);
         border: get-decoration(border);
         justify-content: center;
