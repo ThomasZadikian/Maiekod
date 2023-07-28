@@ -105,6 +105,25 @@
 
 //responsive
 
+// Responsive for medium device
+
+@media screen and (max-width: 1320px) and (min-width: 678px) {
+  .tarifsContact {
+    flex-direction: column;
+    .tarification,
+    .contact {
+      background-color: get-color(bg-dark);
+      height: 100%;
+      width: 90%;
+    }
+  }
+  .mainContent {
+    .social {
+      position: static;
+    }
+  }
+}
+
 //responsive for small screen
 
 @media screen and (max-width: 679px) {
@@ -113,10 +132,6 @@
     .tarification,
     .contact {
       background-color: get-color(bg-dark);
-    }
-
-    .tarification,
-    .contact {
       height: 100%;
       width: 90%;
     }
