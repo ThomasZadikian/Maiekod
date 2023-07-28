@@ -43,13 +43,6 @@ button {
   display: flex;
   margin: 1vw 3vw 0 2vw;
   justify-content: flex-start;
-  p {
-    margin-left: 10px;
-    padding: 5px;
-    background-color: red;
-    border-radius: get-decoration(border-radius)-5px;
-    box-shadow: get-decoration(shadow-box);
-  }
   .navbar-left {
     display: flex;
   }
