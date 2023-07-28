@@ -133,6 +133,7 @@
     .contact {
       margin: 15px 0 15px 0;
       background-color: get-color(bg-dark);
+      border: get-decoration(white-border);
       box-shadow: get-decoration(small-shadow-box);
       height: 100%;
       width: 90%;
