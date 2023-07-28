@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+@keyframes shine {
+  0% {
+    color: #c1c1c1;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: #c1c1c1;
+  }
+}
+@keyframes floatAndPulseButton {
+  0% {
+    transform: scale(1);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+@keyframes floatAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(7px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+* {
+  font-family: "Jost", sans-serif;
+  color: rgb(193, 193, 193);
+}
+* html,
+* body {
+  background-color: rgb(25, 25, 25);
+  margin: 0;
+}
+
+button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background: rgb(89, 89, 89);
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+}
+.stars-container #starsCanvas {
+  width: 100vw;
+  height: 100%;
+}
+
+.navbar {
+  display: flex;
+  margin: 1vw 3vw 0 2vw;
+  justify-content: flex-start;
+}
+.navbar p {
+  margin-left: 10px;
+  padding: 5px;
+  background-color: red;
+  border-radius: 5px;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+}
+.navbar .navbar-left {
+  display: flex;
+}
+.navbar .navbar-right {
+  display: flex;
+  margin-left: auto;
+  gap: 3vw;
+}
+.navbar .icon {
+  height: 50px;
+  width: 50px;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+}
+.navbar a {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  text-decoration: none;
+  background: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(193, 193, 193) 4px, transparent 5px) no-repeat;
+  background-size: 0 65%;
+  transition: background-size 0.3s;
+  animation: shine 2s linear infinite reverse;
+}
+.navbar a:hover {
+  animation: none;
+  color: white;
+  background-size: 100% 65%;
+  transition: 0.3s;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainContent .social {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 25px;
+  left: 0;
+  gap: 15px;
+  margin-left: 10px;
+}
+.mainContent .social a {
+  height: 50px;
+  width: 50px;
+}
+.mainContent .social svg {
+  fill: rgb(255, 255, 255);
+  height: 50px;
+  width: 50px;
+  transition: 0.3s ease-in-out;
+}
+.mainContent .social .moveIcon {
+  height: 60px;
+  width: 60px;
+  transition: 0.3s ease-in-out;
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 1320px) and (min-width: 992px) {
+  button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  }
+  .navbar p {
+    font-size: medium;
+    max-width: 55vw;
+  }
+  .social {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 680px) {
+  button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  }
+  .navbar p {
+    position: absolute;
+    font-size: medium;
+    max-width: 85vh;
+    top: 6vh;
+  }
+  .mainContent .social {
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 679px) {
+  button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  }
+  .navbar {
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .navbar p {
+    display: none;
+  }
+  .navbar .navbar-left {
+    display: none;
+  }
+  .navbar .icon {
+    display: none;
+  }
+  .navbar .navbar-right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .navbar .navbar-right a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background: rgba(89, 89, 89, 0.05);
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+    justify-content: center;
+    display: inline-flex;
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 10px;
+  }
+  .mainContent .social {
+    flex-direction: row;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+  }
+  .social svg {
+    fill: white;
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    transition: 0.3s ease-in-out;
+  }
+}
+.tarifsContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tarifsContact .tarifs,
+.tarifsContact .contact {
+  height: 35vw;
+  width: 35vw;
+  margin: 1vw;
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+}
+.tarifsContact .tarifs:first-child {
+  text-align: center;
+}
+.tarifsContact .tarifs * > :not(footer) {
+  color: rgb(255, 255, 255);
+  flex: auto;
+  margin-bottom: 2vw;
+}
+.tarifsContact .tarifs h1 {
+  margin-top: 1vw;
+}
+.tarifsContact .tarifs .tarifsHoraires {
+  font-weight: 700;
+}
+.tarifsContact .tarifs .services {
+  text-decoration: underline;
+}
+.tarifsContact .tarifs ul {
+  list-style: none;
+}
+.tarifsContact .tarifs footer {
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+}
+.tarifsContact .tarifs footer p {
+  font-size: small;
+}
+.tarifsContact .contact .contactInput {
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  line-height: 22px;
+  background-color: rgb(25, 25, 25);
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
+  padding: 13px;
+  width: 100%;
+  margin-bottom: 1vw;
+  box-sizing: border-box;
+  outline: 0;
+}
+.tarifsContact .contact .contactInput:focus {
+  border: 0.5px rgba(255, 255, 255, 0.25) solid;
+}
+.tarifsContact .contact textarea {
+  height: 50%;
+  line-height: 150%;
+  resize: vertical;
+}
+.tarifsContact .contact [type=submit] {
+  width: 100%;
+  background: rgb(45, 45, 45);
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+}
+.tarifsContact .contact [type=submit]:hover {
+  background: #cc4949;
+}/*# sourceMappingURL=tarifs.css.map */
