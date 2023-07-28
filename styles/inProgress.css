@@ -134,6 +134,7 @@ button {
   width: 50px;
 }
 .mainContent .social svg {
+  fill: rgb(255, 255, 255);
   height: 50px;
   width: 50px;
   transition: 0.3s ease-in-out;

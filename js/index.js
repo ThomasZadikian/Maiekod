@@ -86,7 +86,7 @@ function toogleStyle() {
         socialButton[social].style.fill = color;
         socialButton[social].classList.add("moveIcon");
       } else if (event.type === "mouseout") {
-        socialButton[social].style.fill = "black";
+        socialButton[social].style.fill = "rgb(255, 255, 255)";
         socialButton[social].classList.remove("moveIcon");
       }
     }

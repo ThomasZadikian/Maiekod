@@ -107,6 +107,7 @@ button {
     }
 
     svg {
+      fill: get-color(default-color);
       height: 50px;
       width: 50px;
       transition: 0.3s ease-in-out;
