@@ -49,7 +49,7 @@ function createCard() {
         <p>
         ${engagementArray[engagement]}
         </p>
-        <button type="button" class="button">REDIRECT_TO</button>
+        <button type="button" class="buttonCard">REDIRECT_TO</button>
         </div>
         </div>
         </li>
