@@ -263,7 +263,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 1100px;
+  top: 50vw;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -293,6 +293,29 @@ button {
   width: 350px;
 }
 
+@media screen and (max-width: 992px) and (min-width: 680px) {
+  button {
+    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  }
+  .navbar p {
+    position: absolute;
+    font-size: medium;
+    max-width: 85vh;
+    top: 6vh;
+  }
+  .mainContent .social {
+    flex-direction: row;
+  }
+  .presentation {
+    margin-top: 0;
+    top: 110%;
+  }
+  .presentation .presentationText {
+    height: 65vw;
+    width: 90vw;
+  }
+}
 @media screen and (max-width: 679px) {
   .mainContent .centerTitle {
     max-height: 330px;
@@ -300,6 +323,9 @@ button {
   .mainContent .centerTitle button {
     box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
     border: 0.5px rgba(255, 255, 255, 0.4) solid;
+  }
+  .presentation {
+    top: 110%;
   }
   .presentation .presentationText {
     max-width: 300px;
@@ -310,5 +336,8 @@ button {
   }
   .presentation button {
     max-width: 280px;
+  }
+  .social {
+    position: static;
   }
 }/*# sourceMappingURL=homepage.css.map */

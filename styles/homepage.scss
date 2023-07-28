@@ -42,7 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 1100px;
+  top: 50vw;
   left: 50%;
   transform: translate(-50%, 0);
   .presentationText {
@@ -76,7 +76,36 @@
   }
 }
 
-// Reponsive design specific for index.html
+// Reponsive design
+
+// Responsive for medium screen
+@media screen and (max-width: 992px) and (min-width: 680px) {
+  button {
+    box-shadow: get-decoration(shadow-box);
+    border: get-decoration(border);
+  }
+  .navbar {
+    p {
+      position: absolute;
+      font-size: medium;
+      max-width: 85vh;
+      top: 6vh;
+    }
+  }
+  .mainContent {
+    .social {
+      flex-direction: row;
+    }
+  }
+  .presentation {
+    margin-top: 0;
+    top: 110%;
+    .presentationText {
+      height: 65vw;
+      width: 90vw;
+    }
+  }
+}
 
 // Responsive for small screen
 
@@ -91,6 +120,7 @@
     }
   }
   .presentation {
+    top: 110%;
     .presentationText {
       max-width: 300px;
       height: 915px;
@@ -101,5 +131,8 @@
     button {
       max-width: 280px;
     }
+  }
+  .social {
+    position: static;
   }
 }
