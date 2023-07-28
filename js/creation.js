@@ -30,8 +30,8 @@ function createCard() {
     if (engagement != "Une question, un besoin ?") {
       cardContainer.innerHTML += `
         <li id="card">
-        <div>
-        <div class="discovery">
+        <div class="cardBox">
+        <div id="boxInCard">
         <h1>${engagement}</h1>
         <p>
         ${engagementArray[engagement]}
@@ -43,8 +43,8 @@ function createCard() {
     } else {
       cardContainer.innerHTML += `
         <li id="card">
-        <div>
-        <div class="discovery">
+        <div class="cardBox">
+        <div id="boxInCard">
         <h1>${engagement}</h1>
         <p>
         ${engagementArray[engagement]}

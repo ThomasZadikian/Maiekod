@@ -253,10 +253,10 @@ body {
   z-index: 2;
   background: rgb(255, 255, 255);
 }
-.timeline ul li div {
+.timeline ul li .cardBox {
   position: relative;
   bottom: 0;
-  width: 400px;
+  width: 20vw;
   padding: 15px;
   background: rgb(45, 45, 45);
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
@@ -264,38 +264,41 @@ body {
   display: flex;
   align-items: center;
 }
-.timeline ul li div div {
-  height: 200px;
+.timeline ul li .cardBox #boxInCard {
+  height: 80%;
   display: flex;
+  box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2%;
 }
-.timeline ul li div div p {
+.timeline ul li .cardBox #boxInCard p {
   text-align: center;
 }
-.timeline ul li div .discovery {
+.timeline ul li .cardBox .discovery {
   margin-right: 10px;
 }
-.timeline ul li:nth-of-type(odd) > div {
+.timeline ul li:nth-of-type(odd) > .cardBox {
   left: 45px;
 }
-.timeline ul li:nth-of-type(even) > div {
+.timeline ul li:nth-of-type(even) > .cardBox {
   left: -439px;
 }
 
-.timeline ul li div {
+.timeline ul li .cardBox {
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
-.timeline ul li:nth-of-type(odd) div {
+.timeline ul li:nth-of-type(odd) .cardBox {
   transform: translate3d(100px, -10px, 0) rotate(10deg);
 }
-.timeline ul li:nth-of-type(even) div {
+.timeline ul li:nth-of-type(even) .cardBox {
   transform: translate3d(-100px, -10px, 0) rotate(10deg);
 }
-.timeline ul li.in-view div {
+.timeline ul li.in-view .cardBox {
   transform: none;
   visibility: visible;
   opacity: 1;
@@ -314,33 +317,33 @@ body {
   .timeline ul {
     margin-top: 5vw;
   }
-  .timeline ul li div {
+  .timeline ul li .cardBox {
     width: 40vw;
     flex-direction: column;
   }
-  .timeline ul li div div {
+  .timeline ul li .cardBox .boxInCard {
     width: 80%;
     margin: 10px;
   }
-  .timeline ul li:nth-of-type(odd) > div {
+  .timeline ul li:nth-of-type(odd) > .cardBox {
     left: 2vw;
   }
-  .timeline ul li:nth-of-type(even) > div {
+  .timeline ul li:nth-of-type(even) > .cardBox {
     left: -50vw;
     margin-right: 5vw;
   }
-  .timeline ul li div {
+  .timeline ul li .cardBox {
     visibility: hidden;
     opacity: 0;
     transition: all 0.5s ease-in-out;
   }
-  .timeline ul li:nth-of-type(odd) div {
+  .timeline ul li:nth-of-type(odd) .cardBox {
     transform: translate3d(0, 0, 0) rotate(10deg);
   }
-  .timeline ul li:nth-of-type(even) div {
+  .timeline ul li:nth-of-type(even) .cardBox {
     transform: translate3d(0, 0, 0) rotate(10deg);
   }
-  .timeline ul li.in-view div {
+  .timeline ul li.in-view .cardBox {
     transform: none;
     visibility: visible;
     opacity: 1;
@@ -350,37 +353,37 @@ body {
   .mainContent .timeline ul li::after {
     z-index: 0;
   }
-  .mainContent .timeline ul li div {
+  .mainContent .timeline ul li .cardBox {
     width: 80vw;
     z-index: 1;
   }
-  .mainContent .timeline ul li div .discovery {
+  .mainContent .timeline ul li .cardBox .boxInCard {
     width: 90%;
     margin: 5px;
   }
-  .mainContent .timeline ul li:nth-of-type(odd) > div {
+  .mainContent .timeline ul li:nth-of-type(odd) > .cardBox {
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-55%);
   }
-  .mainContent .timeline ul li:nth-of-type(even) > div {
+  .mainContent .timeline ul li:nth-of-type(even) > .cardBox {
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-55%);
   }
   .mainContent .social {
     position: static;
   }
-  .timeline ul li div {
+  .timeline ul li .cardBox {
     visibility: hidden;
     opacity: 0;
     transition: all 0.5s ease-in-out;
   }
-  .timeline ul li:nth-of-type(odd) div {
+  .timeline ul li:nth-of-type(odd) .cardBox {
     transform: translate3d(0, 0, 0) rotate(10deg);
   }
-  .timeline ul li:nth-of-type(even) div {
+  .timeline ul li:nth-of-type(even) .cardBox {
     transform: translate3d(0, 0, 0) rotate(10deg);
   }
-  .timeline ul li.in-view div {
+  .timeline ul li.in-view .cardBox {
     transform: none;
     visibility: visible;
     opacity: 1;

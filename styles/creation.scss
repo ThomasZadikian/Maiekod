@@ -30,22 +30,25 @@ body {
         z-index: 2;
         background: get-color(default-color);
       }
-      div {
+      .cardBox {
         position: relative;
         bottom: 0;
-        width: 400px;
+        width: 20vw;
         padding: 15px;
         background: get-color(bg-card);
         box-shadow: get-decoration(shadow-box);
         border-radius: get-decoration(border-radius);
         display: flex;
         align-items: center;
-        div {
-          height: 200px;
+        #boxInCard {
+          height: 80%;
           display: flex;
+          box-shadow: get-decoration(shadow-box);
+          border-radius: get-decoration(border-radius);
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          padding: 2%;
           p {
             text-align: center;
           }
@@ -55,12 +58,12 @@ body {
         }
       }
       &:nth-of-type(odd) {
-        > div {
+        > .cardBox {
           left: 45px;
         }
       }
       &:nth-of-type(even) {
-        > div {
+        > .cardBox {
           left: -439px;
         }
       }
@@ -72,23 +75,23 @@ body {
 .timeline {
   ul {
     li {
-      div {
+      .cardBox {
         visibility: hidden;
         opacity: 0;
         transition: all 0.5s ease-in-out;
       }
       &:nth-of-type(odd) {
-        div {
+        .cardBox {
           transform: translate3d(100px, -10px, 0) rotate(10deg);
         }
       }
       &:nth-of-type(even) {
-        div {
+        .cardBox {
           transform: translate3d(-100px, -10px, 0) rotate(10deg);
         }
       }
       &.in-view {
-        div {
+        .cardBox {
           transform: none;
           visibility: visible;
           opacity: 1;
@@ -117,21 +120,21 @@ body {
     ul {
       margin-top: 5vw;
       li {
-        div {
+        .cardBox {
           width: 40vw;
           flex-direction: column;
-          div {
+          .boxInCard {
             width: 80%;
             margin: 10px;
           }
         }
         &:nth-of-type(odd) {
-          > div {
+          > .cardBox {
             left: 2vw;
           }
         }
         &:nth-of-type(even) {
-          > div {
+          > .cardBox {
             left: -50vw;
             margin-right: 5vw;
           }
@@ -142,23 +145,23 @@ body {
   .timeline {
     ul {
       li {
-        div {
+        .cardBox {
           visibility: hidden;
           opacity: 0;
           transition: all 0.5s ease-in-out;
         }
         &:nth-of-type(odd) {
-          div {
+          .cardBox {
             transform: translate3d(0, 0, 0) rotate(10deg);
           }
         }
         &:nth-of-type(even) {
-          div {
+          .cardBox {
             transform: translate3d(0, 0, 0) rotate(10deg);
           }
         }
         &.in-view {
-          div {
+          .cardBox {
             transform: none;
             visibility: visible;
             opacity: 1;
@@ -178,24 +181,24 @@ body {
           &::after {
             z-index: 0;
           }
-          div {
+          .cardBox {
             width: 80vw;
             z-index: 1;
-            .discovery {
+            .boxInCard {
               width: 90%;
               margin: 5px;
             }
           }
           &:nth-of-type(odd) {
-            > div {
+            > .cardBox {
               left: 50%;
-              transform: translate(-50%);
+              transform: translate(-55%);
             }
           }
           &:nth-of-type(even) {
-            > div {
+            > .cardBox {
               left: 50%;
-              transform: translate(-50%);
+              transform: translate(-55%);
             }
           }
         }
@@ -208,23 +211,23 @@ body {
   .timeline {
     ul {
       li {
-        div {
+        .cardBox {
           visibility: hidden;
           opacity: 0;
           transition: all 0.5s ease-in-out;
         }
         &:nth-of-type(odd) {
-          div {
+          .cardBox {
             transform: translate3d(0, 0, 0) rotate(10deg);
           }
         }
         &:nth-of-type(even) {
-          div {
+          .cardBox {
             transform: translate3d(0, 0, 0) rotate(10deg);
           }
         }
         &.in-view {
-          div {
+          .cardBox {
             transform: none;
             visibility: visible;
             opacity: 1;
