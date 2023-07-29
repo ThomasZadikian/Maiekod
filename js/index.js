@@ -122,14 +122,4 @@ function toogleStyle() {
   }
 }
 
-// function for toogle theme
-
-let buttonThemeChanger = document.querySelector("#themeToogle");
-const body = document.body;
-buttonThemeChanger.addEventListener("click", () => {
-  body.classList.toogle("day-mode");
-});
-
-toogleTheme();
-
 export { drawStars, updateStarOpacity, toogleStyle, parallaxEffect };
