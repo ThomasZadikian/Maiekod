@@ -1,3 +1,6 @@
+// Const & variable for all JS
+const body = document.body;
+
 // Function for stars in background
 function parallaxEffect(layer, scrollSpeed) {
   const element = document.querySelector(layer);
@@ -47,7 +50,11 @@ function drawStars() {
   for (const star of stars) {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
-    ctx.fillStyle = `rgba(232,232,232,${star.opacity})`;
+    if (body.classList.contains("day-mode")) {
+      ctx.fillStyle = `rgba(25,25,25,${star.opacity})`;
+    } else {
+      ctx.fillStyle = `rgba(232,232,232,${star.opacity})`;
+    }
     ctx.fill();
 
     star.x += star.speed;
@@ -71,65 +78,77 @@ const socialButton = {
 };
 
 function toogleStyle() {
-  const maxWidth = 1320;
-  const styleElement = socialButton;
-
-  if (window.innerWidth < maxWidth) {
-    const socialIcons = document.querySelectorAll("svg");
-    socialIcons.forEach((icon) => {
-      icon.classList.add("reflection");
-      icon.classList.add("shimmer");
-    });
-  } else {
-    function moveSocialMedia(event, social, color) {
-      if (event.type === "mouseover") {
-        socialButton[social].style.fill = color;
-        socialButton[social].classList.add("moveIcon");
-      } else if (event.type === "mouseout") {
+  function moveSocialMedia(event, social, color) {
+    if (event.type === "mouseover") {
+      socialButton[social].style.fill = color;
+      socialButton[social].classList.add("moveIcon");
+    } else if (event.type === "mouseout") {
+      if (body.classList.contains("day-mode")) {
+        socialButton[social].style.fill = "rgb(25, 25, 25)";
+      } else {
         socialButton[social].style.fill = "rgb(255, 255, 255)";
-        socialButton[social].classList.remove("moveIcon");
       }
+      socialButton[social].classList.remove("moveIcon");
     }
+  }
 
-    function addEventListenersToSocialButton(social, color) {
-      const button = socialButton[social];
-      button.addEventListener("mouseover", (event) =>
-        moveSocialMedia(event, social, color)
-      );
-      button.addEventListener("mouseout", (event) =>
-        moveSocialMedia(event, social, "black")
-      );
+  function addEventListenersToSocialButton(social, color) {
+    const button = socialButton[social];
+    button.addEventListener("mouseover", (event) =>
+      moveSocialMedia(event, social, color)
+    );
+    button.addEventListener("mouseout", (event) =>
+      moveSocialMedia(event, social, "black")
+    );
+  }
+
+  for (const social in socialButton) {
+    switch (social) {
+      case "facebook":
+        addEventListenersToSocialButton(social, "rgba(59, 89, 152, 100%)");
+        break;
+      case "github":
+        addEventListenersToSocialButton(social, "rgba(150, 3, 0, 100%)");
+        break;
+      case "instagram":
+        addEventListenersToSocialButton(social, "rgba(195, 42, 163, 100%)");
+        break;
+      case "linkedin":
+        addEventListenersToSocialButton(social, "rgba(10, 102, 194, 100%)");
+        break;
+      default:
+        break;
     }
+  }
+  updateSocialButtonColors();
+}
 
+function updateSocialButtonColors() {
+  if (body.classList.contains("day-mode")) {
     for (const social in socialButton) {
-      switch (social) {
-        case "facebook":
-          addEventListenersToSocialButton(social, "rgba(59, 89, 152, 100%)");
-          break;
-        case "github":
-          addEventListenersToSocialButton(social, "rgba(150, 3, 0, 100%)");
-          break;
-        case "instagram":
-          addEventListenersToSocialButton(social, "rgba(195, 42, 163, 100%)");
-          break;
-        case "linkedin":
-          addEventListenersToSocialButton(social, "rgba(10, 102, 194, 100%)");
-          break;
-        default:
-          break;
-      }
+      socialButton[social].style.fill = "rgb(25, 25, 25)";
+    }
+  } else {
+    for (const social in socialButton) {
+      socialButton[social].style.fill = "rgb(255, 255, 255)";
     }
   }
 }
 
 // function for toogle theme
 
-let buttonThemeChanger = document.querySelector("#themeToogle");
-const body = document.body;
-buttonThemeChanger.addEventListener("click", () => {
-  body.classList.toogle("day-mode");
-});
+function toogleTheme() {
+  let buttonThemeChanger = document.querySelector("#themeToogle");
+  buttonThemeChanger.addEventListener("click", () => {
+    body.classList.toggle("day-mode");
+    updateSocialButtonColors();
+  });
+}
 
-toogleTheme();
-
-export { drawStars, updateStarOpacity, toogleStyle, parallaxEffect };
+export {
+  drawStars,
+  updateStarOpacity,
+  toogleStyle,
+  parallaxEffect,
+  toogleTheme,
+};

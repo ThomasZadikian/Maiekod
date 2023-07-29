@@ -1,5 +1,6 @@
 // General style for all pages
 @import "../styles/_config.scss";
+@import "../styles/globalStyleLightMode";
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
 
 * {
@@ -10,10 +11,6 @@
     background-color: get-color(bg-dark);
     margin: 0;
   }
-}
-
-.day-mode {
-  background-color: get-color(bg-light);
 }
 
 button {
