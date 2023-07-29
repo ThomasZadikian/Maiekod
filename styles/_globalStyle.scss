@@ -86,26 +86,24 @@ button {
   justify-content: center;
   align-items: center;
   .social {
+    z-index: -1;
     display: flex;
     flex-direction: column;
     position: fixed;
     bottom: 25px;
-    left: 0;
     gap: 15px;
-    margin-left: 10px;
-
+    left: 1vh;
+    bottom: 1vw;
     a {
       height: 50px;
       width: 50px;
     }
-
     svg {
       fill: get-color(default-color);
       height: 50px;
       width: 50px;
       transition: 0.3s ease-in-out;
     }
-
     .moveIcon {
       height: 60px;
       width: 60px;
@@ -129,11 +127,6 @@ button {
       max-width: 55vw;
     }
   }
-  .social {
-    position: absolute;
-    right: 10px;
-    bottom: 20px;
-  }
 }
 
 // Responsive for medium screen
@@ -148,11 +141,6 @@ button {
       font-size: medium;
       max-width: 85vh;
       top: 6vh;
-    }
-  }
-  .mainContent {
-    .social {
-      flex-direction: row;
     }
   }
 }
@@ -197,24 +185,9 @@ button {
       }
     }
   }
-
   .mainContent {
     .social {
       flex-direction: row;
-      position: absolute;
-      right: 10px;
-      bottom: 0;
-    }
-  }
-  .social {
-    svg {
-      fill: white;
-      box-shadow: get-decoration(shadow-box);
-      border: get-decoration(border);
-      border-radius: 50%;
-      height: 50px;
-      width: 50px;
-      transition: 0.3s ease-in-out;
     }
   }
 }

@@ -1,25 +1,21 @@
-// Specific styles for index.html
 @import "../styles/_globalStyle.scss";
 
 .mainContent {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   .centerTitle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    svg {
-      stroke: #595959;
-      stroke-width: 0;
-      animation: floatAndPulse 4s ease-in-out infinite;
-      height: 430px;
-      width: 440px;
+    margin-top: 25vh;
+    h1 {
+      font-size: 10rem;
+      line-height: 0rem;
+    }
+    p {
+      font-size: 2rem;
+      line-height: 1.5rem;
+      margin-left: 35vh;
+      margin-top: 0;
     }
     button {
       padding-left: 5%;
@@ -42,33 +38,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 50vw;
+  top: 100vh;
   left: 50%;
   transform: translate(-50%, 0);
-  .presentationText {
+  .boxPresentation {
     position: relative;
-    height: 550px;
-    width: 750px;
     margin-bottom: 10vh;
     text-align: justify;
-    padding: 20px;
+    padding: 5vh;
     border-radius: 5px;
-    background: linear-gradient(
-      180deg,
-      rgba(73, 73, 73, 0.05) 0%,
-      rgba(89, 89, 89, 0) 100%
-    );
-    background-color: get-color(bg-dark);
-    box-shadow: 0px 0px 25px 6px rgba(0, 0, 0, 0.5);
-    border: 0.5px rgba(0, 0, 0, 0.2) solid;
+    background: get-color(bg-dark);
+    box-shadow: get-decoration(shadow-box);
+    border: get-decoration(border);
+    .presentationText {
+      margin-bottom: 5vh;
+    }
     .buttonContainer {
-      position: absolute;
+      position: relative;
       justify-content: center;
       bottom: 10px;
       display: flex;
       left: 50%;
       transform: translateX(-50%);
-      gap: 35px;
+      gap: 15%;
       button {
         height: 60px;
         width: 350px;
@@ -94,16 +86,38 @@
     }
   }
   .mainContent {
-    .social {
-      flex-direction: row;
+    .centerTitle {
+      h1 {
+        font-size: 8rem;
+        line-height: 0rem;
+      }
+      p {
+        font-size: 2rem;
+        line-height: 1.5rem;
+        margin-left: 0;
+        margin-top: 0;
+      }
+      button {
+        box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
+        border: 0.5px rgba(255, 255, 255, 0.4) solid;
+      }
     }
-  }
-  .presentation {
-    margin-top: 0;
-    top: 110%;
-    .presentationText {
-      height: 65vw;
-      width: 90vw;
+    .presentation {
+      z-index: 1;
+      top: 110%;
+      .boxPresentation {
+        width: 80vw;
+      }
+      .presentationText {
+        margin-bottom: 0;
+      }
+      .buttonContainer {
+        flex-direction: column;
+      }
+      button {
+        margin-top: 10%;
+        max-width: 280px;
+      }
     }
   }
 }
@@ -113,7 +127,17 @@
 @media screen and (max-width: 679px) {
   .mainContent {
     .centerTitle {
-      max-height: 330px;
+      margin-top: 35%;
+      h1 {
+        font-size: 7rem;
+        line-height: 0rem;
+      }
+      p {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin-left: 0;
+        margin-top: 0;
+      }
       button {
         box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
         border: 0.5px rgba(255, 255, 255, 0.4) solid;
@@ -122,18 +146,18 @@
   }
   .presentation {
     top: 110%;
+    .boxPresentation {
+      max-width: 85vw;
+    }
     .presentationText {
-      max-width: 300px;
-      height: 915px;
+      margin-bottom: 0;
     }
     .buttonContainer {
       flex-direction: column;
     }
     button {
+      margin-top: 10%;
       max-width: 280px;
     }
-  }
-  .social {
-    position: static;
   }
 }
