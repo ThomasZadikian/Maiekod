@@ -72,14 +72,18 @@ function createStar() {
 
 function drawStars() {
   ctx.clearRect(0, 0, starsCanvas.width, starsCanvas.height);
+  let test = document.querySelector(".icon"); 
 
   for (const star of stars) {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
     if (body.classList.contains("day-mode")) {
-      ctx.fillStyle = `rgba(0,0,255,${star.opacity})`;
+      ctx.fillStyle = `rgba(64, 64, 122,0)`; 
+      test.style.borderRadius = "50%"; 
+      test.style.boxShadow = "0 0 1000px 200px rgba(243, 156, 18,1.0)"; 
     } else {
       ctx.fillStyle = `rgba(232,232,232,${star.opacity})`;
+      test.style.boxShadow = "0 0 1000px 90px rgba(243, 156, 18,0.6)"; 
     }
     ctx.fill();
 
