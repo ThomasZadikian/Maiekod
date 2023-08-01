@@ -92,7 +92,6 @@
 }
 .day-mode .themeChanger .themeChangerButton {
   left: 10px;
-  transition: left 5s ease-in-out;
   background-color: rgb(25, 25, 25);
 }
 .day-mode .navbar a {
