@@ -1,3 +1,29 @@
+import { setCookie, getCookie, cookieExists, deleteCookie } from './cookies.js';
+
+// Cookies verification 
+document.addEventListener('DOMContentLoaded', function () {
+  if (!cookieExists('cookie_consent')) {
+    document.querySelector(".cookie-banner").style.display = "block";
+  }
+
+  const acceptCookieButton = document.querySelector('.cookiesAccept');
+  acceptCookieButton.addEventListener('click', function () {
+    setCookie('cookie_consent', 'true', new Date('2030-01-01'));
+    document.querySelector(".cookie-banner").style.display = "none";
+  });
+  
+  // Cookie for theme
+  const theme = getCookie('theme');
+  console.log(theme); 
+  if(theme === "day-mode") {
+    body.classList.add("day-mode"); 
+    updateSocialButtonColors();
+  } else {
+    body.classList.remove("day-mode"); 
+    updateSocialButtonColors();
+  }
+});
+
 // Const & variable for all JS
 const body = document.body;
 
@@ -137,46 +163,18 @@ function updateSocialButtonColors() {
 
 // function for toogle theme
 
-function setThemeCookie(theme) {
-  document.cookie = `theme=${theme}; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/`;
-}
-
-function getThemeFromCookie() {
-  const name = 'theme=';
-  const decodedCookie = decodeURIComponent(document.cookie);
-  const cookieArray = decodedCookie.split(';');
-
-  for (let i = 0; i < cookieArray.length; i++) {
-    let cookie = cookieArray[i].trim();
-    if (cookie.indexOf(name) === 0) {
-      return cookie.substring(name.length, cookie.length);
-    }
-  }
-
-  return null;
-}
-
 function toogleTheme() {
   let buttonThemeChanger = document.querySelector("#themeToogle");
   buttonThemeChanger.addEventListener("click", () => {
     body.classList.toggle("day-mode");
     updateSocialButtonColors();
     if(body.classList.contains("day-mode")) {
-      setThemeCookie("day-mode")
+      setCookie("theme", "day-mode", new Date('2030-01-01'))
     } else {
-      setThemeCookie("night-mode")
+      setCookie("theme","night-mode", new Date('2030-01-01'))
     }
   });
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  const theme = getThemeFromCookie();
-  if (theme === 'night-mode') {
-    body.classList.remove("day-mode"); 
-  } else { 
-    body.classList.add("day-mode"); 
-  }
-});
 
 export {
   drawStars,
