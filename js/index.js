@@ -137,13 +137,45 @@ function updateSocialButtonColors() {
 
 // function for toogle theme
 
+function setThemeCookie(theme) {
+  document.cookie = `theme=${theme}; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/`;
+}
+
+function getThemeFromCookie() {
+  const name = 'theme=';
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const cookieArray = decodedCookie.split(';');
+
+  for (let i = 0; i < cookieArray.length; i++) {
+    let cookie = cookieArray[i].trim();
+    if (cookie.indexOf(name) === 0) {
+      return cookie.substring(name.length, cookie.length);
+    }
+  }
+
+  return null;
+}
+
 function toogleTheme() {
   let buttonThemeChanger = document.querySelector("#themeToogle");
   buttonThemeChanger.addEventListener("click", () => {
     body.classList.toggle("day-mode");
     updateSocialButtonColors();
+    if(body.classList.contains("day-mode")) {
+      setThemeCookie("day-mode")
+    } else {
+      setThemeCookie("night-mode")
+    }
   });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const theme = getThemeFromCookie();
+  if (theme === 'night-mode') {
+  } else {
+    body.classList.add("day-mode"); 
+  }
+});
 
 export {
   drawStars,
