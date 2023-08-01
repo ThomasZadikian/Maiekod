@@ -51,7 +51,7 @@ function drawStars() {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
     if (body.classList.contains("day-mode")) {
-      ctx.fillStyle = `rgba(25,25,25,${star.opacity})`;
+      ctx.fillStyle = `rgba(0,0,255,${star.opacity})`;
     } else {
       ctx.fillStyle = `rgba(232,232,232,${star.opacity})`;
     }

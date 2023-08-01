@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
 @keyframes shine {
@@ -73,7 +74,27 @@
   }
 }
 .day-mode {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(200, 200, 200);
+  transition: 0.5s ease-in-out;
+}
+.day-mode .themeChanger {
+  background-color: rgb(200, 200, 200);
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 10px;
+}
+.day-mode .themeChanger::before {
+  color: rgb(200, 200, 200);
+}
+.day-mode .themeChanger::after {
+  color: rgb(25, 25, 25);
+}
+.day-mode .themeChanger button {
+  background-color: rgb(200, 200, 200);
+}
+.day-mode .themeChanger .themeChangerButton {
+  left: 10px;
+  transition: left 5s ease-in-out;
+  background-color: rgb(25, 25, 25);
 }
 .day-mode .navbar a {
   color: rgb(25, 25, 25);
@@ -85,8 +106,8 @@
 .day-mode .navbar a:hover {
   color: rgb(25, 25, 25);
 }
-.day-mode .mainContent .centerTitle {
-  fill: rgb(25, 25, 25);
+.day-mode .mainContent .centerTitle h1, .day-mode .mainContent .centerTitle p {
+  color: rgb(25, 25, 25);
 }
 .day-mode .mainContent .moveIcon {
   height: 60px;
@@ -185,8 +206,54 @@
 }
 * html,
 * body {
+  transition: 0.5s ease-in-out;
   background-color: rgb(25, 25, 25);
   margin: 0;
+}
+
+.themeChanger {
+  display: flex;
+  align-items: center;
+  margin-left: 1vw;
+  height: 35px;
+  width: 150px;
+  margin-top: 5px;
+  background-color: rgb(200, 200, 200);
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 10px;
+  padding: 5px;
+  position: relative;
+}
+.themeChanger::before {
+  content: "☼";
+  position: absolute;
+  left: 22px;
+  color: rgb(25, 25, 25);
+  z-index: 1;
+}
+.themeChanger::after {
+  content: "☾";
+  position: absolute;
+  right: 26px;
+  color: rgb(200, 200, 200);
+  z-index: 1;
+}
+.themeChanger button {
+  background-color: rgb(200, 200, 200);
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  height: 100%;
+  width: 150px;
+}
+.themeChanger .themeChangerButton {
+  position: absolute;
+  right: 10px;
+  background-color: rgb(25, 25, 25);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transition: left 0.8s ease-in-out;
 }
 
 button {

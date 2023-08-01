@@ -8,8 +8,55 @@
   color: get-color(fontColor);
   html,
   body {
+    transition: 0.5s ease-in-out;
     background-color: get-color(bg-dark);
     margin: 0;
+  }
+}
+
+.themeChanger{
+  display: flex;
+  align-items: center;
+  margin-left: 1vw;
+  height: 35px;
+  width: 150px;
+  margin-top: 5px;
+  background-color: get-color(bg-light);
+  box-shadow: get-decoration(box-shadow);
+  border: get-decoration(border);
+  border-radius: get-decoration(border-radius);
+  padding: 5px;
+  position: relative; 
+  &::before {
+    content: '\263C';
+    position: absolute;
+    left: 22px;
+		color: get-color(bg-dark);
+    z-index: 1;
+  } 
+  &::after {
+    content: '\263E';
+    position: absolute;
+    right: 26px;
+		color: get-color(bg-light);
+    z-index: 1;
+  }
+  button{
+    background-color: get-color(bg-light);
+    box-shadow: none; 
+    border-radius: none; 
+    border: none; 
+    height: 100%;
+    width: 150px;
+  }
+  .themeChangerButton {
+    position: absolute;
+    right: 10px;
+    background-color: get-color(bg-dark);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: left 0.8s ease-in-out;
   }
 }
 

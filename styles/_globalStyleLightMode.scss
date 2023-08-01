@@ -4,6 +4,27 @@
 
 .day-mode {
   background-color: get-color(bg-light);
+  transition: 0.5s ease-in-out;
+  .themeChanger{
+    background-color: get-color(bg-light);
+    box-shadow: get-decoration(box-shadow);
+    border: get-decoration(border);
+    border-radius: get-decoration(border-radius);
+    &::before {
+      color: get-color(bg-light);
+    } 
+    &::after {
+      color: get-color(bg-dark);
+    }
+    button {
+      background-color: get-color(bg-light);
+    }
+    .themeChangerButton {
+      left: 10px; 
+      transition: left 5s ease-in-out;
+      background-color: rgba(25,25,25,1);
+    }
+  }
   .navbar {
     a {
       color: get-color(default-light-color);
@@ -25,7 +46,9 @@
 
   .mainContent {
     .centerTitle {
-      fill: get-color(default-light-color);
+      h1,p {
+        color: get-color(default-light-color); 
+      }
     }
 
     .moveIcon {
