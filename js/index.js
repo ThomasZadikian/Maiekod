@@ -12,15 +12,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector(".cookie-banner").style.display = "none";
   });
   
-  // Cookie for theme
-  const theme = getCookie('theme');
-  console.log(theme); 
-  if(theme === "day-mode") {
-    body.classList.add("day-mode"); 
-    updateSocialButtonColors();
-  } else {
-    body.classList.remove("day-mode"); 
-    updateSocialButtonColors();
+  if (cookieExists("cookie_consent")) {
+    // Cookie for theme
+    const theme = getCookie('theme');
+    console.log(theme); 
+    if (theme === "day-mode") {
+      body.classList.add("day-mode"); 
+      updateSocialButtonColors();
+    } else {
+      body.classList.remove("day-mode"); 
+      updateSocialButtonColors();
+    }
   }
 });
 
