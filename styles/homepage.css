@@ -204,7 +204,6 @@
 }
 * html,
 * body {
-  transition: 0.5s ease-in-out;
   background-color: rgb(25, 25, 25);
   margin: 0;
 }

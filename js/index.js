@@ -172,7 +172,8 @@ function toogleTheme() {
 document.addEventListener('DOMContentLoaded', function () {
   const theme = getThemeFromCookie();
   if (theme === 'night-mode') {
-  } else {
+    body.classList.remove("day-mode"); 
+  } else { 
     body.classList.add("day-mode"); 
   }
 });
