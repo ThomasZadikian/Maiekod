@@ -13,7 +13,6 @@
   }
 }
 
-
 .cookie-banner{
   display: none;
   position: absolute; 
@@ -27,6 +26,15 @@
   padding: 0 10px 5px 10px;
   z-index: 2;
 }
+
+.sun {
+  background-color: transparent; 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: -1;
+}
+
 .themeChanger{
   display: flex;
   align-items: center;
@@ -113,6 +121,7 @@ button {
     gap: 3vw;
   }
   .icon {
+    border-radius: 50%;
     height: 60px;
     width: 60px;
     box-shadow: get-decoration(shadow-box);

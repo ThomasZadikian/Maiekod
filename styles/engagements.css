@@ -113,88 +113,9 @@
   transition: 0.3s ease-in-out;
   margin-left: 15px;
 }
-@media screen and (max-width: 1320px) and (min-width: 992px) {
-  .day-mode button {
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(0, 0, 0, 0.2) solid;
-  }
-  .day-mode .navbar p {
-    font-size: medium;
-    max-width: 55vw;
-  }
-  .day-mode .social {
-    position: absolute;
-    right: 10px;
-    bottom: 20px;
-  }
-}
-@media screen and (max-width: 992px) and (min-width: 680px) {
-  .day-mode button {
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(0, 0, 0, 0.2) solid;
-  }
-  .day-mode .navbar p {
-    position: absolute;
-    font-size: medium;
-    max-width: 85vh;
-    top: 6vh;
-  }
-  .day-mode .mainContent .social {
-    flex-direction: row;
-  }
-}
 @media screen and (max-width: 679px) {
-  .day-mode button {
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(0, 0, 0, 0.2) solid;
-  }
-  .day-mode .navbar {
-    justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .day-mode .navbar p {
-    display: none;
-  }
-  .day-mode .navbar .navbar-left {
-    display: none;
-  }
-  .day-mode .navbar .icon {
-    display: none;
-  }
-  .day-mode .navbar .navbar-right {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
   .day-mode .navbar .navbar-right a {
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
-    background: rgb(25, 25, 25);
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(0, 0, 0, 0.2) solid;
-    justify-content: center;
-    display: inline-flex;
-    padding: 5px;
-    font-size: 25px;
-    border-radius: 10px;
-  }
-  .day-mode .mainContent .social {
-    flex-direction: row;
-    position: absolute;
-    right: 10px;
-    bottom: 0;
-  }
-  .day-mode .social svg {
-    fill: white;
-    box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
-    border: 0.5px rgba(0, 0, 0, 0.2) solid;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    transition: 0.3s ease-in-out;
+    color: rgb(255, 255, 255);
   }
 }
 
@@ -220,6 +141,14 @@
   transform: translate(-50%);
   padding: 0 10px 5px 10px;
   z-index: 2;
+}
+
+.sun {
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: -1;
 }
 
 .themeChanger {
@@ -308,6 +237,7 @@ button {
   gap: 3vw;
 }
 .navbar .icon {
+  border-radius: 50%;
   height: 60px;
   width: 60px;
   box-shadow: 0px 1px 9px 5px rgba(0, 0, 0, 0.25);
@@ -571,7 +501,7 @@ body {
     transform: translate(-55%);
   }
   .mainContent .social {
-    position: static;
+    position: sticky;
   }
   .timeline ul li .cardBox {
     visibility: hidden;

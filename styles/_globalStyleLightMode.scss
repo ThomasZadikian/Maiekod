@@ -56,106 +56,14 @@
   }
 
   // Reponsive design start here
-
-  //Responsive for large screen
-  @media screen and (max-width: 1320px) and (min-width: 992px) {
-    button {
-      box-shadow: get-decoration(shadow-box);
-      border: get-decoration(border);
-    }
-    .navbar {
-      p {
-        font-size: medium;
-        max-width: 55vw;
-      }
-    }
-    .social {
-      position: absolute;
-      right: 10px;
-      bottom: 20px;
-    }
-  }
-
-  // Responsive for medium screen
-  @media screen and (max-width: 992px) and (min-width: 680px) {
-    button {
-      box-shadow: get-decoration(shadow-box);
-      border: get-decoration(border);
-    }
-    .navbar {
-      p {
-        position: absolute;
-        font-size: medium;
-        max-width: 85vh;
-        top: 6vh;
-      }
-    }
-    .mainContent {
-      .social {
-        flex-direction: row;
-      }
-    }
-  }
-
   // Responsive for small screen
 
   @media screen and (max-width: 679px) {
-    button {
-      box-shadow: get-decoration(shadow-box);
-      border: get-decoration(border);
-    }
     .navbar {
-      justify-content: center;
-      margin-left: 10px;
-      margin-right: 10px;
-      p {
-        display: none;
-      }
-      .navbar-left {
-        display: none;
-      }
-      .icon {
-        display: none;
-      }
       .navbar-right {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
         a {
-          padding-top: 4px;
-          padding-bottom: 4px;
-          padding-left: 4px;
-          padding-right: 4px;
-          background: get-color(bg-dark);
-          box-shadow: get-decoration(shadow-box);
-          border: get-decoration(border);
-          justify-content: center;
-          display: inline-flex;
-          padding: 5px;
-          font-size: 25px;
-          border-radius: 10px;
+          color: get-color(default-color); 
         }
       }
     }
-
-    .mainContent {
-      .social {
-        flex-direction: row;
-        position: absolute;
-        right: 10px;
-        bottom: 0;
-      }
-    }
-    .social {
-      svg {
-        fill: white;
-        box-shadow: get-decoration(shadow-box);
-        border: get-decoration(border);
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
-        transition: 0.3s ease-in-out;
-      }
-    }
-  }
-}
+}}
