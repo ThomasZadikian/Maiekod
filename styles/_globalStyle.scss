@@ -16,7 +16,6 @@
 .cookie-banner {
   display: none;
   position: absolute;
-  top: 10px;
   background-color: get-color(bg-card);
   border: get-decoration(border);
   border-radius: get-decoration(border-radius);
@@ -25,6 +24,8 @@
   transform: translate(-50%);
   padding: 0 10px 5px 10px;
   z-index: 2;
+  top: 10%;
+  width: 65%;
 }
 
 .sun {
@@ -188,6 +189,10 @@ button {
 
 //Responsive for large screen
 @media screen and (max-width: 1320px) and (min-width: 992px) {
+  .cookie-banner {
+    top: 15%;
+    width: 90%;
+  }
   button {
     box-shadow: get-decoration(shadow-box);
     border: get-decoration(border);
@@ -202,6 +207,10 @@ button {
 
 // Responsive for medium screen
 @media screen and (max-width: 992px) and (min-width: 680px) {
+  .cookie-banner {
+    top: 15%;
+    width: 90%;
+  }
   button {
     box-shadow: get-decoration(shadow-box);
     border: get-decoration(border);
@@ -219,6 +228,10 @@ button {
 // Responsive for small screen
 
 @media screen and (max-width: 679px) {
+  .cookie-banner {
+    top: 15%;
+    width: 90%;
+  }
   button {
     box-shadow: get-decoration(shadow-box);
     border: get-decoration(border);

@@ -3,10 +3,10 @@ import {
   updateStarOpacity,
   toogleStyle,
   parallaxEffect,
-  toogleTheme,
+  toggleTheme,
 } from "./index.js";
 parallaxEffect(".twinkling", 0.3);
 drawStars();
 updateStarOpacity();
 toogleStyle();
-toogleTheme();
+toggleTheme();

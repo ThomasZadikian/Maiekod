@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".cookie-banner").style.display = "none";
   });
 
+  selectThemeWhithoutCookies();
+
   if (cookieExists("cookie_consent")) {
     // Cookie for theme
     const theme = getCookie("theme");
@@ -169,6 +171,26 @@ function updateSocialButtonColors() {
 
 // function for toogle theme
 
+// Vérification dark mode
+function detectSystemTheme(callback) {
+  const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const lightModeQuery = window.matchMedia("(prefers-color-scheme: light)");
+
+  const updateTheme = () => {
+    const isDarkMode = darkModeQuery.matches;
+    const isLightMode = lightModeQuery.matches;
+
+    callback(isDarkMode, isLightMode);
+  };
+
+  // Appeler updateTheme pour obtenir les valeurs initiales
+  updateTheme();
+
+  // Ajouter des écouteurs d'événements pour détecter les changements de thème
+  darkModeQuery.addListener(updateTheme);
+  lightModeQuery.addListener(updateTheme);
+}
+
 function toggleTheme() {
   const buttonThemeChanger = document.querySelector("#themeToogle");
   const body = document.body;
@@ -187,10 +209,25 @@ function toggleTheme() {
     themeChangerButton.style.transform = `translateX(-${currentPosition}px)`;
     isLeft = !isLeft;
 
-    if (body.classList.contains("day-mode")) {
-      setCookie("theme", "day-mode", new Date("2030-01-01"));
+    if (cookieExists("cookie_consent")) {
+      if (body.classList.contains("day-mode")) {
+        setCookie("theme", "day-mode", new Date("2030-01-01"));
+      } else {
+        setCookie("theme", "night-mode", new Date("2030-01-01"));
+      }
+    }
+  });
+}
+
+function selectThemeWhithoutCookies() {
+  detectSystemTheme((isDarkMode, isLightMode) => {
+    if (isDarkMode) {
+      body.classList.remove("day-mode");
+    } else if (isLightMode) {
+      body.classList.add("day-mode");
     } else {
-      setCookie("theme", "night-mode", new Date("2030-01-01"));
+      console.log("Le thème préféré du système n'est ni sombre ni clair.");
+      // Faire quelque chose lorsque le thème préféré n'est ni sombre ni clair
     }
   });
 }
@@ -201,4 +238,5 @@ export {
   toogleStyle,
   parallaxEffect,
   toggleTheme,
+  selectThemeWhithoutCookies,
 };
