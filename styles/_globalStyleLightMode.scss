@@ -12,14 +12,12 @@
       color: get-color(bg-dark);
     }
     &::after {
-      color: get-color(bg-light);
+      color: get-color(bg-dark);
     }
     button {
       background-color: get-color(bg-light);
     }
     .themeChangerButton {
-      // left: 10px;
-      background-color: rgba(25, 25, 25, 1);
       transition: transform 0.8s ease-in-out;
     }
   }
