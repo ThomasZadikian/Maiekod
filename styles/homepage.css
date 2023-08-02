@@ -82,10 +82,10 @@
   border-radius: 10px;
 }
 .day-mode .themeChanger::before {
-  color: rgb(200, 200, 200);
+  color: rgb(25, 25, 25);
 }
 .day-mode .themeChanger::after {
-  color: rgb(25, 25, 25);
+  color: rgb(200, 200, 200);
 }
 .day-mode .themeChanger button {
   background-color: rgb(200, 200, 200);
@@ -168,18 +168,18 @@
 .themeChanger::before {
   content: "☼";
   position: absolute;
-  left: 20px;
-  color: rgb(25, 25, 25);
+  left: 26px;
+  color: rgb(200, 200, 200);
   z-index: 1;
-  font-size: 30px;
+  transform: scale(2);
 }
 .themeChanger::after {
   content: "☾";
   position: absolute;
   right: 23px;
-  color: rgb(200, 200, 200);
+  color: rgb(25, 25, 25);
   z-index: 1;
-  font-size: 30px;
+  transform: scale(2);
 }
 .themeChanger button {
   background-color: rgb(200, 200, 200);

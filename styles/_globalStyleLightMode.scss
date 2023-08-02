@@ -9,10 +9,10 @@
     border: get-decoration(border);
     border-radius: get-decoration(border-radius);
     &::before {
-      color: get-color(bg-light);
+      color: get-color(bg-dark);
     }
     &::after {
-      color: get-color(bg-dark);
+      color: get-color(bg-light);
     }
     button {
       background-color: get-color(bg-light);

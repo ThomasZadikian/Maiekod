@@ -51,18 +51,18 @@
   &::before {
     content: "\263C";
     position: absolute;
-    left: 20px;
-    color: get-color(bg-dark);
+    left: 26px;
+    color: get-color(bg-light);
     z-index: 1;
-    font-size: 30px;
+    transform: scale(2);
   }
   &::after {
     content: "\263E";
     position: absolute;
     right: 23px;
-    color: get-color(bg-light);
+    color: get-color(bg-dark);
     z-index: 1;
-    font-size: 30px;
+    transform: scale(2);
   }
   button {
     background-color: get-color(bg-light);
