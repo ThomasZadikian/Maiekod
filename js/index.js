@@ -12,9 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".cookie-banner").style.display = "none";
   });
 
-  selectThemeWhithoutCookies();
-
   if (cookieExists("cookie_consent")) {
+    console.log("Il existe :");
     // Cookie for theme
     const theme = getCookie("theme");
     console.log(theme);
@@ -25,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
       body.classList.remove("day-mode");
       updateSocialButtonColors();
     }
+  } else {
+    selectThemeWhithoutCookies();
   }
 });
 
@@ -84,10 +85,10 @@ function drawStars() {
     if (body.classList.contains("day-mode")) {
       ctx.fillStyle = `rgba(64, 64, 122,0)`;
       test.style.borderRadius = "50%";
-      test.style.boxShadow = "0 0 1000px 250px rgba(243, 156, 18,1.0)";
+      test.style.boxShadow = "0 0 1000px 200px rgba(243, 156, 18, 1.0)";
     } else {
       ctx.fillStyle = `rgba(232,232,232,${star.opacity})`;
-      test.style.boxShadow = "0 0 1000px 90px rgba(243, 156, 18,0.6)";
+      test.style.boxShadow = "0 0 1000px 90px rgba(243, 156, 18, 0.6)";
     }
     ctx.fill();
 
@@ -194,20 +195,20 @@ function detectSystemTheme(callback) {
 function toggleTheme() {
   const buttonThemeChanger = document.querySelector("#themeToogle");
   const body = document.body;
-  let isLeft = false;
-  let currentPosition = 0;
+  // let isLeft = false;
+  // let currentPosition = 0;
 
   buttonThemeChanger.addEventListener("click", () => {
     body.classList.toggle("day-mode");
     updateSocialButtonColors();
 
-    const themeChangerButton = document.querySelector(".themeChangerButton");
-    const themeChangerWidth =
-      document.querySelector(".themeChanger").offsetWidth;
-    const themeChangerButtonWidth = themeChangerButton.offsetWidth + 26;
-    currentPosition = isLeft ? 0 : themeChangerWidth - themeChangerButtonWidth;
-    themeChangerButton.style.transform = `translateX(-${currentPosition}px)`;
-    isLeft = !isLeft;
+    // const themeChangerButton = document.querySelector(".themeChangerButton");
+    // const themeChangerWidth =
+    //   document.querySelector(".themeChanger").offsetWidth;
+    // const themeChangerButtonWidth = themeChangerButton.offsetWidth + 26;
+    // currentPosition = isLeft ? 0 : themeChangerWidth - themeChangerButtonWidth;
+    // themeChangerButton.style.transform = `translateX(-${currentPosition}px)`;
+    // isLeft = !isLeft;
 
     if (cookieExists("cookie_consent")) {
       if (body.classList.contains("day-mode")) {
@@ -225,9 +226,6 @@ function selectThemeWhithoutCookies() {
       body.classList.remove("day-mode");
     } else if (isLightMode) {
       body.classList.add("day-mode");
-    } else {
-      console.log("Le thème préféré du système n'est ni sombre ni clair.");
-      // Faire quelque chose lorsque le thème préféré n'est ni sombre ni clair
     }
   });
 }
