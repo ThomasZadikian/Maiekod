@@ -14,9 +14,9 @@ toggleTheme();
 // function for scroll button
 const presentationContainer = document.querySelector("#hiddenContainer");
 const showContentButton = document.querySelector("#showContentButton");
-const presentationText = document.querySelector("#presentationText");
+const boxPresentation = document.querySelector(".boxPresentation");
 
 showContentButton.addEventListener("click", () => {
   presentationContainer.removeAttribute("hidden");
-  presentationText.scrollIntoView({ behavior: "smooth" });
+  boxPresentation.scrollIntoView({ behavior: "smooth" });
 });

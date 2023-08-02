@@ -114,6 +114,9 @@
   transition: 0.3s ease-in-out;
   margin-left: 15px;
 }
+.day-mode .mainContent .presentation h1 {
+  color: rgb(25, 25, 25);
+}
 @media screen and (max-width: 679px) {
   .day-mode .navbar .navbar-right a {
     color: rgb(255, 255, 255);

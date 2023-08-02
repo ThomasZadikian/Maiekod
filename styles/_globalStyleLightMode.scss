@@ -54,6 +54,11 @@
       transition: 0.3s ease-in-out;
       margin-left: 15px;
     }
+    .presentation {
+      h1 {
+        color: get-color(bg-dark);
+      }
+    }
   }
 
   // Reponsive design start here
