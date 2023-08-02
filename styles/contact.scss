@@ -6,7 +6,7 @@
   align-items: center;
   .tarification,
   .contact {
-    background-color: get-color(bg-dark);
+    background-color: get-color(bg-card);
     height: 35vw;
     width: 35vw;
     margin: 1vw;
@@ -63,7 +63,7 @@
       font-size: 18px;
       border-radius: get-decoration(border-radius);
       line-height: 22px;
-      background-color: get-color(bg-dark);
+      background-color: get-color(bg-card);
       border: get-decoration(border);
       box-shadow: get-decoration(shadow-box);
       padding: 13px;
@@ -111,7 +111,7 @@
     flex-direction: column;
     .tarification,
     .contact {
-      background-color: get-color(bg-dark);
+      background-color: get-color(bg-card);
       height: 100%;
       width: 90%;
     }
@@ -137,7 +137,7 @@
       width: 90%;
       #tarifs,
       #services {
-        background-color: get-color(bg-dark);
+        background-color: get-color(bg-card);
       }
     }
   }

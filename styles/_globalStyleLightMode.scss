@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
 
 .day-mode {
-  background-color: rgba(170, 166, 157, 1);
+  background-color: get-color(bg-light);
   .themeChanger {
     background-color: get-color(bg-light);
     box-shadow: get-decoration(box-shadow);
@@ -56,7 +56,7 @@
     }
     .presentation {
       h1 {
-        color: get-color(bg-dark);
+        color: get-color(default-light-color);
       }
     }
   }

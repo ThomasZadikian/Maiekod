@@ -88,7 +88,7 @@
 button {
   padding-top: 4px;
   padding-bottom: 4px;
-  background: get-color(bg-dark);
+  background: get-color(bg-card);
   box-shadow: get-decoration(shadow-box);
   border-radius: get-decoration(border-radius);
   overflow: hidden;
@@ -259,7 +259,7 @@ button {
         padding-bottom: 4px;
         padding-left: 4px;
         padding-right: 4px;
-        background: get-color(bg-dark);
+        background: get-color(bg-card);
         box-shadow: get-decoration(shadow-box);
         border: get-decoration(border);
         justify-content: center;
