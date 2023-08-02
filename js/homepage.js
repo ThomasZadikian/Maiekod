@@ -3,13 +3,13 @@ import {
   updateStarOpacity,
   toogleStyle,
   parallaxEffect,
-  toogleTheme,
+  toggleTheme,
 } from "./index.js";
 parallaxEffect(".twinkling", 0.3);
 drawStars();
 updateStarOpacity();
 toogleStyle();
-toogleTheme();
+toggleTheme();
 
 // function for scroll button
 const presentationContainer = document.querySelector("#hiddenContainer");

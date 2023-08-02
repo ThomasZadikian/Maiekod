@@ -1,26 +1,26 @@
-import { setCookie, getCookie, cookieExists, deleteCookie } from './cookies.js';
+import { setCookie, getCookie, cookieExists, deleteCookie } from "./cookies.js";
 
-// Cookies verification 
-document.addEventListener('DOMContentLoaded', function () {
-  if (!cookieExists('cookie_consent')) {
+// Cookies verification
+document.addEventListener("DOMContentLoaded", function () {
+  if (!cookieExists("cookie_consent")) {
     document.querySelector(".cookie-banner").style.display = "block";
   }
 
-  const acceptCookieButton = document.querySelector('.cookiesAccept');
-  acceptCookieButton.addEventListener('click', function () {
-    setCookie('cookie_consent', 'true', new Date('2030-01-01'));
+  const acceptCookieButton = document.querySelector(".cookiesAccept");
+  acceptCookieButton.addEventListener("click", function () {
+    setCookie("cookie_consent", "true", new Date("2030-01-01"));
     document.querySelector(".cookie-banner").style.display = "none";
   });
-  
+
   if (cookieExists("cookie_consent")) {
     // Cookie for theme
-    const theme = getCookie('theme');
-    console.log(theme); 
+    const theme = getCookie("theme");
+    console.log(theme);
     if (theme === "day-mode") {
-      body.classList.add("day-mode"); 
+      body.classList.add("day-mode");
       updateSocialButtonColors();
     } else {
-      body.classList.remove("day-mode"); 
+      body.classList.remove("day-mode");
       updateSocialButtonColors();
     }
   }
@@ -74,18 +74,18 @@ function createStar() {
 
 function drawStars() {
   ctx.clearRect(0, 0, starsCanvas.width, starsCanvas.height);
-  let test = document.querySelector(".sun"); 
+  let test = document.querySelector(".sun");
 
   for (const star of stars) {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
     if (body.classList.contains("day-mode")) {
-      ctx.fillStyle = `rgba(64, 64, 122,0)`; 
-      test.style.borderRadius = "50%"; 
-      test.style.boxShadow = "0 0 1000px 250px rgba(243, 156, 18,1.0)"; 
+      ctx.fillStyle = `rgba(64, 64, 122,0)`;
+      test.style.borderRadius = "50%";
+      test.style.boxShadow = "0 0 1000px 250px rgba(243, 156, 18,1.0)";
     } else {
       ctx.fillStyle = `rgba(232,232,232,${star.opacity})`;
-      test.style.boxShadow = "0 0 1000px 90px rgba(243, 156, 18,0.6)"; 
+      test.style.boxShadow = "0 0 1000px 90px rgba(243, 156, 18,0.6)";
     }
     ctx.fill();
 
@@ -169,15 +169,28 @@ function updateSocialButtonColors() {
 
 // function for toogle theme
 
-function toogleTheme() {
-  let buttonThemeChanger = document.querySelector("#themeToogle");
+function toggleTheme() {
+  const buttonThemeChanger = document.querySelector("#themeToogle");
+  const body = document.body;
+  let isLeft = false;
+  let currentPosition = 0;
+
   buttonThemeChanger.addEventListener("click", () => {
     body.classList.toggle("day-mode");
     updateSocialButtonColors();
-    if(body.classList.contains("day-mode")) {
-      setCookie("theme", "day-mode", new Date('2030-01-01'))
+
+    const themeChangerButton = document.querySelector(".themeChangerButton");
+    const themeChangerWidth =
+      document.querySelector(".themeChanger").offsetWidth;
+    const themeChangerButtonWidth = themeChangerButton.offsetWidth + 26;
+    currentPosition = isLeft ? 0 : themeChangerWidth - themeChangerButtonWidth;
+    themeChangerButton.style.transform = `translateX(-${currentPosition}px)`;
+    isLeft = !isLeft;
+
+    if (body.classList.contains("day-mode")) {
+      setCookie("theme", "day-mode", new Date("2030-01-01"));
     } else {
-      setCookie("theme","night-mode", new Date('2030-01-01'))
+      setCookie("theme", "night-mode", new Date("2030-01-01"));
     }
   });
 }
@@ -187,5 +200,5 @@ export {
   updateStarOpacity,
   toogleStyle,
   parallaxEffect,
-  toogleTheme,
+  toggleTheme,
 };
