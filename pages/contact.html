@@ -24,8 +24,9 @@
   <body>
     <div class="cookie-banner">
       <p>
-        Nous utilisons des cookies pour améliorer votre expérience sur notre site.
-        En continuant à naviguer, vous acceptez notre utilisation des cookies.
+        Nous utilisons des cookies pour améliorer votre expérience sur notre
+        site. En continuant à naviguer, vous acceptez notre utilisation des
+        cookies.
         <a href="politique-cookies.html">En savoir plus</a>.
       </p>
       <button class="cookiesAccept">Accepter</button>
@@ -35,7 +36,6 @@
       <nav class="navbar" id="navbar">
         <div class="navbar-left">
           <img class="icon" src="../assets/icons/icon.png" />
-
         </div>
         <div class="navbar-right">
           <a href="../index.html">Accueil</a>
@@ -53,25 +53,25 @@
         <div class="tarification">
           <div class="tarifsExplain">
             <section id="tarifs">
-                <h1>Tarification</h1>
-                <p>
-                    Pour une tarification transparente, je préfère afficher une
-                    tarification horaire. Pour obtenir un devis, utilisez le
-                    formulaire de contact et je serai ravi de vous répondre
-                </p>
-                <p class="tarifsHoraires">Tarification horaire : 25€</p>
+              <h1>Tarification</h1>
+              <p>
+                Pour une tarification transparente, je préfère afficher une
+                tarification horaire. Pour obtenir un devis, utilisez le
+                formulaire de contact et je serai ravi de vous répondre
+              </p>
+              <p class="tarifsHoraires">Tarification horaire : 25€</p>
             </section>
             <section id="services">
-            <h1 class="services">Service complémentaire :</h1>
-            <ul>
+              <h1 class="services">Service complémentaire :</h1>
+              <ul>
                 <li>Optimisation SEO* : 10% du prix du site</li>
                 <li>
-                    Service de maintenance : 15% du prix du site, mensuellement
+                  Service de maintenance : 15% du prix du site, mensuellement
                 </li>
                 <li>Mise à jour du contenu : 50€ par intervention</li>
-            </ul>
+              </ul>
             </section>
-        </div>
+          </div>
           <footer>
             <p>
               *L’optimisation SEO est une technique de rédaction permettant
@@ -80,21 +80,24 @@
           </footer>
         </div>
         <form class="contact" method="POST" action="../back-end/form.php">
-            <h1>Formulaire de contact</h1>
+          <h1>Formulaire de contact</h1>
           <input
             name="email"
             type="text"
             class="contactInput"
             placeholder="Votre adresse mail"
           />
-          <select
-            id="Raison du message"
-            class="contactInput"
-            placeholder="Raison du message">
+          <label for="raison">Raison du message :</label>
+          <select id="raison" name="raison" class="contactInput" required>
             <option value="" disabled selected>-- Sélectionnez --</option>
             <option value="demande-de-devis">Demande de devis</option>
-            <option value="question-tarification">Question concernant la tarification</option>
-            <option value="probleme-utilisation">Problème avec l'utilisation du site</option>
+            <option value="question-tarification">
+              Question concernant la tarification
+            </option>
+            <option value="probleme-utilisation">
+              Problème avec l'utilisation du site
+            </option>
+          </select>
           <textarea
             name="text"
             class="contactInput"
