@@ -1,13 +1,16 @@
 // Colors & style variables
 
 $colors: (
+  // Dark mode
   fontColor: rgba(193, 193, 193, 1),
-  default-color: rgb(255, 255, 255),
+  default-color: #ffffff,
+  bg-dark: #212121,
+  // Light mode
   default-light-color: rgb(25, 25, 25),
-  bg-dark: rgba(35, 35, 35, 1),
   bg-light: rgba(170, 166, 157, 1),
-  bg-button: rgba(89, 89, 89, 1),
-  bg-card: rgba(45, 45, 45, 1),
+  // Generic colors
+  bg-card: #333333,
+  bg-button: #444444
 );
 
 $decoration: (

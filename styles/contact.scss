@@ -135,9 +135,20 @@
       box-shadow: get-decoration(small-shadow-box);
       height: 100%;
       width: 90%;
+      margin-top: 10vw;
       #tarifs,
       #services {
-        background-color: get-color(bg-card);
+        margin-bottom: 10vw;
+        background-color: get-color(bg-button);
+        p {
+          margin: 5vw;
+        }
+        li {
+          margin: 5vw 5vw 5vw 0;
+        }
+      }
+      .contactInput {
+        background-color: get-color(bg-button);
       }
     }
   }
