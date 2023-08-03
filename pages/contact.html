@@ -31,6 +31,13 @@
       </p>
       <button class="cookiesAccept">Accepter</button>
     </div>
+    <div class="errorMessage" id="errorMessage">
+      <p>
+        Tout les éléments du formulaire ne sont pas complets ou ne conviennent
+        pas au format correspondant, merci de respecter le format de chaque
+        case.
+      </p>
+    </div>
     <header>
       <div class="sun"></div>
       <nav class="navbar" id="navbar">
@@ -79,10 +86,16 @@
             </p>
           </footer>
         </div>
-        <form class="contact" method="POST" action="../back-end/form.php">
+        <form
+          class="contact"
+          method="POST"
+          action="../back-end/form.php"
+          onsubmit="return validateForm(); "
+        >
           <h1>Formulaire de contact</h1>
           <input
             name="email"
+            id="email"
             type="text"
             class="contactInput"
             placeholder="Votre adresse mail"
@@ -100,10 +113,11 @@
           </select>
           <textarea
             name="text"
+            id="text"
             class="contactInput"
             placeholder="Entrez votre message ici"
           ></textarea>
-          <input type="submit" value="SUBMIT" />
+          <button type="submit" id="submitContact">Envoyer</button>
         </form>
       </section>
       <section class="social">

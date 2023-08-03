@@ -379,6 +379,21 @@ button {
     flex-direction: row;
   }
 }
+.errorMessage {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  background-color: #cc4949;
+  width: 50vw;
+  top: 5vh;
+  left: 50%;
+  transform: translate(-50%);
+  border: 0.5px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 10px;
+  z-index: 2;
+  padding: 0 10px 0 15px;
+}
+
 .tarifsContact {
   display: flex;
   justify-content: center;
@@ -447,6 +462,9 @@ button {
   margin-bottom: 1vw;
   box-sizing: border-box;
   outline: 0;
+}
+.tarifsContact .contact .contactInput .error {
+  border: #cc4949;
 }
 .tarifsContact .contact .contactInput:focus {
   border: 0.5px rgba(255, 255, 255, 0.25) solid;

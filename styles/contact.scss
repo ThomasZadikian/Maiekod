@@ -1,5 +1,19 @@
 @import "../styles/_globalStyle.scss";
 
+.errorMessage {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  background-color: #cc4949;
+  width: 50vw;
+  top: 5vh;
+  left: 50%;
+  transform: translate(-50%);
+  border: get-decoration(border);
+  border-radius: get-decoration(border-radius);
+  z-index: 2;
+  padding: 0 10px 0 15px;
+}
 .tarifsContact {
   display: flex;
   justify-content: center;
@@ -71,6 +85,9 @@
       margin-bottom: 1vw;
       box-sizing: border-box;
       outline: 0;
+      .error {
+        border: #cc4949;
+      }
     }
 
     .contactInput:focus {

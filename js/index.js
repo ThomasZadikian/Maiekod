@@ -13,10 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   if (cookieExists("cookie_consent")) {
-    console.log("Il existe :");
     // Cookie for theme
     const theme = getCookie("theme");
-    console.log(theme);
     if (theme === "day-mode") {
       body.classList.add("day-mode");
       updateSocialButtonColors();
