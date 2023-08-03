@@ -78,13 +78,10 @@ submitContact.addEventListener("click", (e) => {
     formData.append("raison", raisonInput.value);
     formData.append("text", textInput.value);
 
-    fetch(
-      "https://merry-panda-334c8e.netlify.app/.netlify/functions/sendMail",
-      {
-        method: "POST",
-        body: formData,
-      }
-    )
+    fetch("/.netlify/functions/sendMail", {
+      method: "POST",
+      body: formData,
+    })
       .then((response) => {
         if (response.ok) {
           messageForm(
