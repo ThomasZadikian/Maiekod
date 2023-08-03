@@ -7,10 +7,6 @@ function writeToLog($data)
     file_put_contents($file, $content, FILE_APPEND);
 }
 
-ini_set('SMTP', 'localhost');
-ini_set('smtp_port', 1025);
-
-
 try {
     $email = $_POST['email'];
     $raison = $_POST['raison'];
