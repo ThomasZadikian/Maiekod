@@ -147,6 +147,10 @@
   top: 10%;
   width: 65%;
 }
+.cookie-banner button {
+  height: 100%;
+  width: 100%;
+}
 
 .sun {
   background-color: transparent;
