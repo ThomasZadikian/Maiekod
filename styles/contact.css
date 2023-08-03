@@ -379,11 +379,10 @@ button {
     flex-direction: row;
   }
 }
-.errorMessage {
-  transition: 0.5s ease;
+.message {
   opacity: 0;
+  transition: 0.5s ease;
   position: absolute;
-  background-color: #cc4949;
   width: 50vw;
   top: 5vh;
   left: 50%;
@@ -392,6 +391,15 @@ button {
   border-radius: 10px;
   z-index: 2;
   padding: 0 10px 0 15px;
+}
+.message.error {
+  background-color: #cc4949;
+}
+.message.success {
+  background-color: #73df6a;
+}
+.message.success p {
+  color: rgb(25, 25, 25);
 }
 
 .tarifsContact {
@@ -463,8 +471,8 @@ button {
   box-sizing: border-box;
   outline: 0;
 }
-.tarifsContact .contact .contactInput .error {
-  border: #cc4949;
+.tarifsContact .contact .contactInput.error {
+  border: 1px solid #cc4949;
 }
 .tarifsContact .contact .contactInput:focus {
   border: 0.5px rgba(255, 255, 255, 0.25) solid;
@@ -488,9 +496,40 @@ button {
   transition: all 0.3s;
 }
 .tarifsContact .contact [type=submit]:hover {
-  background: #cc4949;
+  background: #73df6a;
 }
 
+@keyframes icon-animation {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    transform: rotate(-120deg) scale(4);
+  }
+  66% {
+    transform: rotate(-240deg) scale(4);
+  }
+  100% {
+    transform: rotate(-360deg) scale(1);
+  }
+}
+@keyframes input-shadow {
+  0% {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  }
+  40% {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: none;
+  }
+  70% {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  }
+}
 @media screen and (max-width: 1320px) and (min-width: 678px) {
   .tarifsContact {
     flex-direction: column;

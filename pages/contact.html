@@ -31,13 +31,7 @@
       </p>
       <button class="cookiesAccept">Accepter</button>
     </div>
-    <div class="errorMessage" id="errorMessage">
-      <p>
-        Tout les éléments du formulaire ne sont pas complets ou ne conviennent
-        pas au format correspondant, merci de respecter le format de chaque
-        case.
-      </p>
-    </div>
+    <div class="message" id="message"></div>
     <header>
       <div class="sun"></div>
       <nav class="navbar" id="navbar">
@@ -99,6 +93,7 @@
             type="text"
             class="contactInput"
             placeholder="Votre adresse mail"
+            required
           />
           <label for="raison">Raison du message :</label>
           <select id="raison" name="raison" class="contactInput" required>
@@ -111,11 +106,13 @@
               Problème avec l'utilisation du site
             </option>
           </select>
+          <label for="text">Votre message : (25 caractère minimum)</label>
           <textarea
             name="text"
             id="text"
             class="contactInput"
             placeholder="Entrez votre message ici"
+            required
           ></textarea>
           <button type="submit" id="submitContact">Envoyer</button>
         </form>

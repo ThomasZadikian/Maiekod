@@ -1,25 +1,43 @@
 <?php
 
+function writeToLog($data)
+{
+    $file = '../logs.txt';
+    $content = date('Y-m-d H:i:s') . ' - ' . print_r($data, true) . PHP_EOL;
+    file_put_contents($file, $content, FILE_APPEND);
+}
+
 ini_set('SMTP', 'localhost');
 ini_set('smtp_port', 1025);
 
-$email = $_POST['email'];
-$raison = $_POST['raison'];
-$message = $_POST['text'];
 
-// Email du destinataire 
-$destinataire = "Thoma.zadikian@gmail.com";
+try {
+    $email = $_POST['email'];
+    $raison = $_POST['raison'];
+    $message = $_POST['text'];
 
-$sujet = $raison;
+    $destinataire = "Thoma.zadikian@gmail.com";
 
-$corps_message = "Corps du message : \n" . $message;
+    $sujet = $raison;
 
-// En-têtes de l'e-mail
-$headers = "From: " . $email . "\r\n";
-$headers .= "Reply-To: " . $email . "\r\n";
+    $corps_message = $message;
 
-if (mail($destinataire, $sujet, $corps_message, $headers)) {
-    echo "L'e-mail a été envoyé avec succès, je devriez avoir également reçu une copie de l'email sur la boîte mail correspondante";
-} else {
-    echo "Une erreur est survenue lors de l'envoi de l'e-mail. Merci de contacter un administrateur";
+    $headers = "From: " . $email . "\r\n";
+    $headers .= "Reply-To: " . $email . "\r\n";
+
+    mail($destinataire, $sujet, $corps_message, $headers);
+
+    $response = array(
+        'status' => 'success',
+        'message' => 'Le formulaire a été soumis avec succès !'
+    );
+} catch (Exception $e) {
+    $response = array(
+        'status' => 'error',
+        'message' => 'Une erreur est survenue lors de l\'envoi du formulaire. Merci de contacter un administrateur.'
+    );
+    writeToLog("Erreur lors du traitement du formulaire : " . $e->getMessage());
 }
+
+header('Content-Type: application/json');
+echo json_encode($response);

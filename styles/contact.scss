@@ -1,10 +1,9 @@
 @import "../styles/_globalStyle.scss";
 
-.errorMessage {
-  transition: 0.5s ease;
+.message {
   opacity: 0;
+  transition: 0.5s ease;
   position: absolute;
-  background-color: #cc4949;
   width: 50vw;
   top: 5vh;
   left: 50%;
@@ -13,7 +12,17 @@
   border-radius: get-decoration(border-radius);
   z-index: 2;
   padding: 0 10px 0 15px;
+  &.error {
+    background-color: #cc4949;
+  }
+  &.success {
+    background-color: #73df6a;
+    p {
+      color: get-color(default-light-color);
+    }
+  }
 }
+
 .tarifsContact {
   display: flex;
   justify-content: center;
@@ -85,8 +94,8 @@
       margin-bottom: 1vw;
       box-sizing: border-box;
       outline: 0;
-      .error {
-        border: #cc4949;
+      &.error {
+        border: 1px solid #cc4949;
       }
     }
 
@@ -114,8 +123,48 @@
       transition: all 0.3s;
     }
     [type="submit"]:hover {
-      background: #cc4949;
+      background: #73df6a;
     }
+  }
+}
+
+// Animation effect
+
+// keyframes
+@keyframes icon-animation {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    transform: rotate(-120deg) scale(4);
+  }
+  66% {
+    transform: rotate(-240deg) scale(4);
+  }
+  100% {
+    transform: rotate(-360deg) scale(1);
+  }
+}
+
+@keyframes input-shadow {
+  0% {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  }
+  40% {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: none;
+  }
+  70% {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -1px rgba(0, 0, 0, 0.2);
   }
 }
 
