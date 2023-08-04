@@ -78,7 +78,7 @@ submitContact.addEventListener("click", (e) => {
     formData.append("raison", raisonInput.value);
     formData.append("text", textInput.value);
 
-    fetch("../back-end/form/.php", {
+    fetch("../back-end/form.php", {
       method: "POST",
       body: formData,
     })
