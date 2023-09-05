@@ -193,20 +193,10 @@ function detectSystemTheme(callback) {
 function toggleTheme() {
   const buttonThemeChanger = document.querySelector("#themeToogle");
   const body = document.body;
-  // let isLeft = false;
-  // let currentPosition = 0;
 
   buttonThemeChanger.addEventListener("click", () => {
     body.classList.toggle("day-mode");
     updateSocialButtonColors();
-
-    // const themeChangerButton = document.querySelector(".themeChangerButton");
-    // const themeChangerWidth =
-    //   document.querySelector(".themeChanger").offsetWidth;
-    // const themeChangerButtonWidth = themeChangerButton.offsetWidth + 26;
-    // currentPosition = isLeft ? 0 : themeChangerWidth - themeChangerButtonWidth;
-    // themeChangerButton.style.transform = `translateX(-${currentPosition}px)`;
-    // isLeft = !isLeft;
 
     if (cookieExists("cookie_consent")) {
       if (body.classList.contains("day-mode")) {
